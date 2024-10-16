@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrap-balance {
+  text-wrap: balance;
+}
+
+[data-rehype-pretty-code-fragment] > pre {
+  overflow: hidden;
+  overflow-x: auto;
+  max-width: 90vw;
+  max-width: calc(100vw - 4rem);
+}
+
+.filigree {
+  border: 0;
+}
+
+.filigree::after {
+  content: "• • •";
+  position: absolute;
+  left: 50%;
+  margin-left: -1.5em;
+  margin-top: -0.9em;
+  text-align: center;
+  font-size: 1.5em;
+}

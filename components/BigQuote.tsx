@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import clsx from "clsx";
 
-export const Box = ({
+export const BigQuote = ({
   className,
   children,
 }: {
@@ -9,8 +9,10 @@ export const Box = ({
   children: ReactNode | ReactNode[];
 }) => {
   return (
-    <div className={clsx("flex", "flex-col", "gap-4", className)}>
+    <blockquote
+      className={clsx("flex", "flex-col", "gap-4", "prose", className)}
+    >
       {children}
-    </div>
+    </blockquote>
   );
 };

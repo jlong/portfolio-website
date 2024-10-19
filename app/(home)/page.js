@@ -263,7 +263,9 @@ export default function Home() {
         </Container>
         <Container>
           <Columns layout={{ md: "1-3" }} gap="5">
-            <Heading as="h3">Mar 2023 &ndash; Oct 2024</Heading>
+            <Heading as="h3" styledAs="h4">
+              Mar 2023 &ndash; Oct 2024
+            </Heading>
             <div className="prose">
               <Heading as="h4" styledAs="h3">
                 Director, Product at Elastic Path
@@ -291,7 +293,9 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3">Apr 2021 &ndash; Mar 2023</Heading>
+            <Heading as="h3" styledAs="h4">
+              Apr 2021 &ndash; Mar 2023
+            </Heading>
             <div className="prose">
               <Heading as="h4" styledAs="h3">
                 Director of Product &amp; Design at Unstack
@@ -318,7 +322,9 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3">Feb 2020 &ndash; Apr 2021</Heading>
+            <Heading as="h3" styledAs="h4">
+              Feb 2020 &ndash; Apr 2021
+            </Heading>
             <div className="prose">
               <Heading as="h4" styledAs="h3">
                 Principle Product Designer &amp; Co-founder at Launchable
@@ -342,7 +348,9 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3">Nov 2018 &ndash; Feb 2020</Heading>
+            <Heading as="h3" styledAs="h4">
+              Nov 2018 &ndash; Feb 2020
+            </Heading>
             <div className="prose">
               <Heading as="h4" styledAs="h3">
                 Director Product Design at Teamworks
@@ -362,7 +370,9 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3">Oct 2016 &ndash; Oct 2018</Heading>
+            <Heading as="h3" styledAs="h4">
+              Oct 2016 &ndash; Oct 2018
+            </Heading>
             <div className="prose">
               <Heading as="h4" styledAs="h3">
                 Design Manager at CloudBees
@@ -386,7 +396,9 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3">Aug 2011 &ndash; Sep 2016</Heading>
+            <Heading as="h3" styledAs="h4">
+              Aug 2011 &ndash; Sep 2016
+            </Heading>
             <div className="prose">
               <Heading as="h4" styledAs="h3">
                 UX Designer at UserVoice

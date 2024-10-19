@@ -163,7 +163,7 @@ module.exports = {
 
     extend: {
       typography: ({ theme }) => ({
-        default: {
+        DEFAULT: {
           css: {
             "--tw-prose-body": theme("colors.normal"),
             "--tw-prose-headings": theme("colors.bold"),
@@ -178,6 +178,11 @@ module.exports = {
             "--tw-prose-captions": theme("colors.normal"),
             "--tw-prose-code": theme("colors.normal"),
             "--tw-prose-pre-code": theme("colors.normal"),
+            a: {
+              "&:hover": {
+                textDecoration: "none",
+              },
+            },
           },
         },
       }),

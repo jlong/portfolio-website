@@ -5,6 +5,7 @@ const sizes = {
   h1: "text-5xl/tight font-bold",
   h2: "text-4xl/tight font-bold",
   h3: "text-2xl/tight font-bold",
+  h4: "text-xl/tight font-bold",
 };
 
 export const Heading = ({
@@ -13,8 +14,8 @@ export const Heading = ({
   className,
   children,
 }: {
-  as: "h1" | "h2" | "h2";
-  styledAs: "h1" | "h2" | "h3";
+  as: "h1" | "h2" | "h3" | "h4";
+  styledAs: "h1" | "h2" | "h3" | "h4";
   className: string;
   children: ReactNode | ReactNode[];
 }) => {

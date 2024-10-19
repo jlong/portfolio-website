@@ -41,7 +41,7 @@ const NavItem = ({ href, children }) => (
 
 const Footer = ({}) => (
   <footer className="flex flex-col flex-none items-center justify-stretch p-4">
-    <Container className="text-center">
+    <Container className="text-center text-default">
       Made with ❤️ in North Carolina. Copyright &copy; John W. Long.
     </Container>
   </footer>

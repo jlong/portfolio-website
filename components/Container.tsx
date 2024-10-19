@@ -1,15 +1,24 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from "react";
+import { clsx } from "clsx";
 
-export const Container = ({className, children}: {
-  className: string,
-  children: ReactNode | ReactNode[]
+export const Container = ({
+  className,
+  children,
+}: {
+  className: string;
+  children: ReactNode | ReactNode[];
 }) => {
   return (
     <div
-      className={`flex-col max-w-[1100px] mx-auto ${className}`}
+      className={clsx(
+        "flex-col",
+        "w-full",
+        "max-w-[1100px]",
+        "mx-auto",
+        className,
+      )}
     >
       {children}
     </div>
-  )
-}
-
+  );
+};

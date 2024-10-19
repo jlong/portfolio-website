@@ -32,6 +32,7 @@ import dstover from "@/images/avatars/david-stover.jpg";
 import rwhite from "@/images/avatars/richard-white.jpg";
 import jdumay from "@/images/avatars/james-dumay.jpg";
 import smoseley from "@/images/avatars/steven-moseley.jpg";
+import IconButton from "@/components/IconButton";
 
 export default function Home() {
   return (
@@ -41,13 +42,14 @@ export default function Home() {
           <Columns layout={{ md: "3-1" }} gap="5">
             <Box>
               <Heading as="h1">
-                <Eyebrow>John W. Long</Eyebrow>A multi-discipline product leader
-                with 20+ years experience building web apps & leading software
-                teams.
+                <Eyebrow>John W. Long</Eyebrow> A multi-discipline product
+                leader with 20+ years experience building web apps &amp; leading
+                software teams.
               </Heading>
-              <p className="text-3xl/tight font-medium">
+              <p className="text-3xl/tight text-default">
                 Currently seeking a leadership role where I can collaborate on{" "}
-                <strong>product</strong> and <strong>design</strong>.
+                <strong className="text-bold">product</strong> and{" "}
+                <strong className="text-bold">design</strong>.
               </p>
               <Actions>
                 <Button kind="primary" size="large">
@@ -55,19 +57,25 @@ export default function Home() {
                 </Button>
               </Actions>
             </Box>
-            <Image alt="" src={portrait} width="428" height="520" />
+            <Image
+              alt=""
+              className="self-center"
+              src={portrait}
+              width="428"
+              height="520"
+            />
           </Columns>
         </Container>
       </Section>
-      <Section paddingY="8">
-        <div className="flex gap-8 justify-around">
+      <Section paddingY="8" paddingX={0}>
+        <ScrollArea>
           <Image alt="ElasticPath" src={elasticpath} width={179} height={42} />
           <Image alt="Unstack" src={unstack} width={191} height={28} />
           <Image alt="Launchable" src={launchable} width={213} height={44} />
           <Image alt="Teamworks" src={teamworks} width={213} height={52} />
           <Image alt="CloudBees" src={cloudbees} width={201} height={32} />
           <Image alt="UserVoice" src={uservoice} width={206} height={28} />
-        </div>
+        </ScrollArea>
       </Section>
       <Divider />
       <Section>
@@ -107,7 +115,7 @@ export default function Home() {
             </div>
           </Columns>
         </Container>
-        <ScrollArea direction="left" speed={5}>
+        <ScrollArea direction="left" speed={5} className="-mx-2">
           <Card>
             <BigQuote>
               <p>
@@ -184,7 +192,7 @@ export default function Home() {
               <p>
                 John was the best first hire we could hope for: engaged,
                 passionate, super talented and a great recruiter of other talent
-                to boot. He's a rare design-gineer that can be so incredibly
+                to boot. He’s a rare design-gineer that can be so incredibly
                 powerful, especially on the right cross functional teams. Highly
                 recommend.
               </p>
@@ -200,10 +208,10 @@ export default function Home() {
           <Card>
             <BigQuote>
               <p>
-                John is one of the most thoughtful design leaders I've had the
+                John is one of the most thoughtful design leaders I’ve had the
                 pleasure to work with. John and I worked closely together on a
                 number of new products &amp; initiatives at CloudBees, including
-                product reimaginings of Jenkins and CloudBees Core. I'd work
+                product reimaginings of Jenkins and CloudBees Core. I’d work
                 with him again in a heartbeat!
               </p>
             </BigQuote>
@@ -221,7 +229,7 @@ export default function Home() {
                 John’s ability to generate market insights, his design
                 intuition, and his vision for the future helped us mold a
                 best-in-class product competing with teams orders of magnitude
-                larger. I was consistently impressed by John's ability to wear a
+                larger. I was consistently impressed by John’s ability to wear a
                 multiple of hats simultaneously.
               </p>
             </BigQuote>
@@ -253,18 +261,200 @@ export default function Home() {
             </div>
           </Columns>
         </Container>
+        <Container>
+          <Columns layout={{ md: "1-3" }} gap="5">
+            <Heading as="h3">Mar 2023 &ndash; Oct 2024</Heading>
+            <div className="prose">
+              <Heading as="h4" styledAs="h3">
+                Director, Product at Elastic Path
+              </Heading>
+              <p>
+                While at Elastic Path I oversaw the integration of{" "}
+                <Link href="https://elasticpath.com/studio">
+                  Elastic Path Studio
+                </Link>{" "}
+                (formerly Unstack) with the core Elastic Path services. This
+                created an easy to use Storefront builder for Elastic Path. This
+                was the main point of the acquisition.
+              </p>
+              <p>
+                While Studio consumed much of my focus, I also joined and led
+                the <strong>Product-Lead growth team</strong> collaborating with
+                Marketing to launch multiple landing pages and a revamped
+                developer site. During this time we saw a{" "}
+                <strong>6x improvement</strong> converting website visitors to
+                signups.
+              </p>
+              <p>
+                I also collaborated with the design team on a design system to
+                unify the design language across products.
+              </p>
+            </div>
+
+            <Heading as="h3">Apr 2021 &ndash; Mar 2023</Heading>
+            <div className="prose">
+              <Heading as="h4" styledAs="h3">
+                Director of Product &amp; Design at Unstack
+              </Heading>
+              <p>
+                After using{" "}
+                <Link href="https://medium.com/@johnwlong/why-we-chose-unstack-over-wordpress-and-havent-looked-back-f0dae6384cd">
+                  Unstack at Launchable
+                </Link>{" "}
+                for the website, I feel in love with the product and had to
+                submit my application. To my great delight I was hired direct
+                product and design.
+              </p>
+              <p>
+                At Unstack, I oversaw the creation of a{" "}
+                <Link href="https://apps.shopify.com/unstack">
+                  Shopify Landing Pages app
+                </Link>
+                , revamped the page builder and style guide, and contributed
+                numerous ideas for improving the component system and CMS
+                capabilities. We worked particularly hard to make our no-touch
+                onboarding experience top notch, and had over 600 installs
+                before Unstack was acquired by Elastic Path.
+              </p>
+            </div>
+
+            <Heading as="h3">Feb 2020 &ndash; Apr 2021</Heading>
+            <div className="prose">
+              <Heading as="h4" styledAs="h3">
+                Principle Product Designer &amp; Co-founder at Launchable
+              </Heading>
+              <p>
+                Joined up with two of{" "}
+                <Link href="https://kohsuke.org/">Kohsuke Kawaguchi</Link> and
+                <Link href="https://entrepreneurshipunlocked.substack.com/">
+                  Harpreet Singh
+                </Link>{" "}
+                to create{" "}
+                <Link href="https://launchableinc.com">Launchable</Link>.
+                Launchable is AI tool that greatly reduces the time required for
+                automated tests to run. On paper my role was Principle Product
+                Designer, but since it was a small team I also created much of
+                the marketing and sales collateral and collaborated with product
+                on the vision. I oversaw the initial design of the application
+                and worked closely with the Engineering team on the right way to
+                visualize improvements to the AI model. Launchable was acquired
+                in 2024 by CloudBees!
+              </p>
+            </div>
+
+            <Heading as="h3">Nov 2018 &ndash; Feb 2020</Heading>
+            <div className="prose">
+              <Heading as="h4" styledAs="h3">
+                Director Product Design at Teamworks
+              </Heading>
+              <p>
+                Joined as the lead designer and coordinated work for several
+                teams (20+ developers). During my tenor we launched{" "}
+                <Link href="https://www.figma.com/exit?url=https://teamworks.com/academics/">
+                  Teamworks Academics
+                </Link>
+                , revamped the design system, and launched numerous improvements
+                to the core product (now called{" "}
+                <Link href="https://teamworks.com/academics/">
+                  Teamworks Operations
+                </Link>
+                ).
+              </p>
+            </div>
+
+            <Heading as="h3">Oct 2016 &ndash; Oct 2018</Heading>
+            <div className="prose">
+              <Heading as="h4" styledAs="h3">
+                Design Manager at CloudBees
+              </Heading>
+              <p>
+                Joined as a Product Designer during a period of growth and
+                quickly became the Design Manager. I worked on{" "}
+                <Link href="https://www.cloudbees.com/jenkins">
+                  CloudBees Jenkins
+                </Link>
+                and{" "}
+                <Link href="https://www.cloudbees.com/newsroom/cloudbees-launches-cloudbees-devoptics-delivering-unparalleled-devops-team-insights-and">
+                  DevOptics
+                </Link>
+                . While I was there we also acquired{" "}
+                <Link href="https://www.cloudbees.com/products/codeship">
+                  CodeShip
+                </Link>{" "}
+                and created a coherent vision for a multi-product UX. I grew the
+                design team from 3 to 8.
+              </p>
+            </div>
+
+            <Heading as="h3">Aug 2011 &ndash; Sep 2016</Heading>
+            <div className="prose">
+              <Heading as="h4" styledAs="h3">
+                UX Designer at UserVoice
+              </Heading>
+              <p>
+                At UserVoice I was a coding designer implementing most of the
+                CSS and JavaScript for my designs. While I was there I lead the
+                design of the new feedback widget, launched a new version of the
+                ticketing UI, and revamped the admin feedback UI. I was also one
+                of the first hires in Raleigh, and played a key role in
+                recruiting and organizing the Raleigh office.
+              </p>
+            </div>
+          </Columns>
+        </Container>
       </Section>
       <Divider />
       <Section>
         <Container>
           <Columns layout={{ md: "1-3" }} gap="5">
             <Heading as="h2">Elsewhere</Heading>
-            <div className="prose">
-              <p></p>
+            <div>
+              <Heading as="h3">Personal projects</Heading>
+              <div className="flex gap-4 mt-3 mb-6">
+                <div className="flex rounded-2xl justify-center items-center w-[316px] h-[198px] bg-depth-1 border border-border">
+                  Radiant CMS
+                </div>
+                <div className="flex rounded-2xl justify-center items-center w-[316px] h-[198px] bg-depth-1 border border-border">
+                  Zest Icons
+                </div>
+                <div className="flex rounded-2xl justify-center items-center w-[316px] h-[198px] bg-depth-1 border border-border">
+                  Taskpage
+                </div>
+              </div>
+
+              <Heading as="h3">Social networks</Heading>
+              <div className="flex gap-2 mt-3">
+                <IconButton
+                  href="https://linkedin.com/in/wiseheart"
+                  uid="linkedin"
+                  tip="LinkedIn"
+                />
+                <IconButton
+                  href="https://dribbble.com/johnwlong"
+                  uid="dribbble"
+                  tip="Dribbble"
+                />
+                <IconButton
+                  href="https://github.com/jlong"
+                  uid="github"
+                  tip="GitHub"
+                />
+                <IconButton
+                  href="https://codepen.io/jlong"
+                  uid="codepen"
+                  tip="CodePen"
+                />
+                <IconButton
+                  href="https://twitter.com/johnwlong"
+                  uid="twitter"
+                  tip="Twitter"
+                />
+              </div>
             </div>
           </Columns>
         </Container>
       </Section>
+      <Divider />
     </>
   );
 }

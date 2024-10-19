@@ -15,6 +15,7 @@ export const Card = ({
         "flex-col",
         "gap-2",
         "bg-depth-1",
+        "border",
         "border-border",
         "rounded-2xl",
         "p-3",

@@ -12,5 +12,9 @@ export const ScrollArea = ({
   speed: number;
   children: ReactNode | ReactNode[];
 }) => {
-  return <div className={clsx("flex", "gap-4", className)}>{children}</div>;
+  return (
+    <div className={clsx("overflow-x-auto", "px-2", className)}>
+      <div className={clsx("flex", "gap-4")}>{children}</div>
+    </div>
+  );
 };

@@ -1,46 +1,46 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Section } from "@/components/Section";
-import { Container } from "@/components/Container";
-import { Box } from "@/components/Box";
-import { Heading, Eyebrow } from "@/components/Typography";
-import { Columns } from "@/components/Columns";
-import { Actions } from "@/components/Actions";
-import { Button } from "@/components/Button";
-import { Divider } from "@/components/Divider";
-import { ScrollArea } from "@/components/ScrollArea";
-import { Card } from "@/components/Card";
-import { BigQuote } from "@/components/BigQuote";
-import { Avatar } from "@/components/Avatar";
+import Link from 'next/link'
+import Image from 'next/image'
+import { Section } from '@/components/Section'
+import { Container } from '@/components/Container'
+import { Box } from '@/components/Box'
+import { Heading, Eyebrow } from '@/components/Typography'
+import { Columns } from '@/components/Columns'
+import { Actions } from '@/components/Actions'
+import { Button } from '@/components/Button'
+import { Divider } from '@/components/Divider'
+import { ScrollArea } from '@/components/ScrollArea'
+import { Card } from '@/components/Card'
+import { BigQuote } from '@/components/BigQuote'
+import { Avatar } from '@/components/Avatar'
 import {
   Person,
   PersonDetails,
   PersonName,
-  PersonTitle,
-} from "@/components/Person";
-import portrait from "@/images/john-portrait.svg";
-import uservoice from "@/images/logos/uservoice.svg";
-import cloudbees from "@/images/logos/cloudbees.svg";
-import teamworks from "@/images/logos/teamworks.svg";
-import launchable from "@/images/logos/launchable.svg";
-import elasticpath from "@/images/logos/elasticpath.svg";
-import unstack from "@/images/logos/unstack.svg";
-import thughes from "@/images/avatars/tim-hughes.jpg";
-import dmorley from "@/images/avatars/dan-morley.jpg";
-import kmalhi from "@/images/avatars/karan-malhi.jpg";
-import dstover from "@/images/avatars/david-stover.jpg";
-import gdeken from "@/images/avatars/grant-deken.jpg";
-import rwhite from "@/images/avatars/richard-white.jpg";
-import jdumay from "@/images/avatars/james-dumay.jpg";
-import smoseley from "@/images/avatars/steven-moseley.jpg";
-import IconButton from "@/components/IconButton";
+  PersonTitle
+} from '@/components/Person'
+import portrait from '@/images/john-portrait.svg'
+import uservoice from '@/images/logos/uservoice.svg'
+import cloudbees from '@/images/logos/cloudbees.svg'
+import teamworks from '@/images/logos/teamworks.svg'
+import launchable from '@/images/logos/launchable.svg'
+import elasticpath from '@/images/logos/elasticpath.svg'
+import unstack from '@/images/logos/unstack.svg'
+import thughes from '@/images/avatars/tim-hughes.jpg'
+import dmorley from '@/images/avatars/dan-morley.jpg'
+import kmalhi from '@/images/avatars/karan-malhi.jpg'
+import dstover from '@/images/avatars/david-stover.jpg'
+import gdeken from '@/images/avatars/grant-deken.jpg'
+import rwhite from '@/images/avatars/richard-white.jpg'
+import jdumay from '@/images/avatars/james-dumay.jpg'
+import smoseley from '@/images/avatars/steven-moseley.jpg'
+import IconButton from '@/components/IconButton'
 
 export default function Home() {
   return (
     <>
       <Section>
         <Container>
-          <Columns layout={{ md: "3-1" }} gap="5">
+          <Columns layout={{ md: '3-1' }} gap="5">
             <Box>
               <Heading as="h1">
                 <Eyebrow>John W. Long</Eyebrow> A multi-discipline product
@@ -48,8 +48,8 @@ export default function Home() {
                 software teams.
               </Heading>
               <p className="text-3xl/tight text-default">
-                Currently seeking a leadership role where I can collaborate on{" "}
-                <strong className="text-bold">product</strong> and{" "}
+                Currently seeking a leadership role where I can collaborate on{' '}
+                <strong className="text-bold">product</strong> and{' '}
                 <strong className="text-bold">design</strong>.
               </p>
               <Actions>
@@ -69,7 +69,7 @@ export default function Home() {
         </Container>
       </Section>
       <Section paddingY="8" paddingX={0}>
-        <ScrollArea>
+        <ScrollArea gap="10">
           <Image alt="ElasticPath" src={elasticpath} width={179} height={42} />
           <Image alt="Unstack" src={unstack} width={191} height={28} />
           <Image alt="Launchable" src={launchable} width={213} height={44} />
@@ -81,19 +81,19 @@ export default function Home() {
       <Divider />
       <Section id="about">
         <Container>
-          <Columns layout={{ md: "1-3" }} gap="5">
+          <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">About me</Heading>
             <div className="prose">
               <p className="text-2xl">
-                In past roles, I’ve been a <strong>Product Manger</strong>,{" "}
-                <strong>Product Designer</strong>, and{" "}
+                In past roles, I’ve been a <strong>Product Manger</strong>,{' '}
+                <strong>Product Designer</strong>, and{' '}
                 <strong>Frontend Engineer</strong>.
               </p>
               <p className="text-xl/8">
                 My approach to product is grounded in action, prioritizing
                 business objectives based on real customer insights. I believe
                 in quickly testing ideas in production and iterating based on
-                feedback and user behavior. For the modern software team{" "}
+                feedback and user behavior. For the modern software team{' '}
                 <strong className="font-bold">
                   product-led growth must be the focus
                 </strong>
@@ -102,21 +102,21 @@ export default function Home() {
               </p>
               <p className="text-xl/8">
                 Collaboration, coaching, and managing by influence are the
-                primary tools I use to lead teams. In the spirit of{" "}
+                primary tools I use to lead teams. In the spirit of{' '}
                 <Link href="https://agilemanifesto.org/principles.html">
                   old-school Agile
                 </Link>
                 , I believe in people over process. If a methodology is
-                necessary, I’ve found the most success with{" "}
+                necessary, I’ve found the most success with{' '}
                 <Link href="https://www.atlassian.com/agile/kanban">
                   Kanban
-                </Link>{" "}
+                </Link>{' '}
                 or <Link href="https://basecamp.com/shapeup">Shape Up</Link>.
               </p>
             </div>
           </Columns>
         </Container>
-        <ScrollArea direction="left" speed={40} className="-mx-2">
+        <ScrollArea className="-mx-2">
           <Card>
             <BigQuote>
               <p>
@@ -264,23 +264,23 @@ export default function Home() {
       <Divider />
       <Section id="work">
         <Container>
-          <Columns layout={{ md: "1-3" }} gap="5">
+          <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Work history</Heading>
             <div className="prose">
               <p className="text-xl/8">
-                I’ve worked with SaaS businesses on{" "}
+                I’ve worked with SaaS businesses on{' '}
                 <strong>Storefront &amp; Website Builders</strong> (Elastic Path
-                Studio), <strong>User Feedback Tools</strong> (UserVoice),{" "}
-                <strong>Membership Management</strong> (MemberHub),{" "}
-                <strong>Sports Team Management</strong> (Teamworks),{" "}
-                <strong>Developer Tools</strong> (CloudBees Jenkins), and{" "}
+                Studio), <strong>User Feedback Tools</strong> (UserVoice),{' '}
+                <strong>Membership Management</strong> (MemberHub),{' '}
+                <strong>Sports Team Management</strong> (Teamworks),{' '}
+                <strong>Developer Tools</strong> (CloudBees Jenkins), and{' '}
                 <strong>AI Tools</strong> (Launchable and Opine).
               </p>
             </div>
           </Columns>
         </Container>
         <Container>
-          <Columns layout={{ md: "1-3" }} gap="5">
+          <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h3" styledAs="h4">
               Mar 2023 &ndash; Oct 2024
             </Heading>
@@ -289,10 +289,10 @@ export default function Home() {
                 Director, Product at Elastic Path
               </Heading>
               <p>
-                While at Elastic Path I oversaw the integration of{" "}
+                While at Elastic Path I oversaw the integration of{' '}
                 <Link href="https://elasticpath.com/studio">
                   Elastic Path Studio
-                </Link>{" "}
+                </Link>{' '}
                 (formerly Unstack) with the core Elastic Path services. This
                 created an easy to use Storefront builder for Elastic Path. This
                 was the main point of the acquisition.
@@ -301,7 +301,7 @@ export default function Home() {
                 While Studio consumed much of my focus, I also joined and led
                 the <strong>Product-Lead growth team</strong> collaborating with
                 Marketing to launch multiple landing pages and a revamped
-                developer site. During this time we saw a{" "}
+                developer site. During this time we saw a{' '}
                 <strong>6x improvement</strong> converting website visitors to
                 signups.
               </p>
@@ -319,16 +319,16 @@ export default function Home() {
                 Director of Product &amp; Design at Unstack
               </Heading>
               <p>
-                After using{" "}
+                After using{' '}
                 <Link href="https://medium.com/@johnwlong/why-we-chose-unstack-over-wordpress-and-havent-looked-back-f0dae6384cd">
                   Unstack at Launchable
-                </Link>{" "}
+                </Link>{' '}
                 for the website, I feel in love with the product and had to
                 submit my application. To my great delight I was hired direct
                 product and design.
               </p>
               <p>
-                At Unstack, I oversaw the creation of a{" "}
+                At Unstack, I oversaw the creation of a{' '}
                 <Link href="https://apps.shopify.com/unstack">
                   Shopify Landing Pages app
                 </Link>
@@ -348,12 +348,12 @@ export default function Home() {
                 Principle Product Designer &amp; Co-founder at Launchable
               </Heading>
               <p>
-                Joined up with two of{" "}
+                Joined up with two of{' '}
                 <Link href="https://kohsuke.org/">Kohsuke Kawaguchi</Link> and
                 <Link href="https://entrepreneurshipunlocked.substack.com/">
                   Harpreet Singh
-                </Link>{" "}
-                to create{" "}
+                </Link>{' '}
+                to create{' '}
                 <Link href="https://launchableinc.com">Launchable</Link>.
                 Launchable is AI tool that greatly reduces the time required for
                 automated tests to run. On paper my role was Principle Product
@@ -375,12 +375,12 @@ export default function Home() {
               </Heading>
               <p>
                 Joined as the lead designer and coordinated work for several
-                teams (20+ developers). During my tenor we launched{" "}
+                teams (20+ developers). During my tenor we launched{' '}
                 <Link href="https://www.figma.com/exit?url=https://teamworks.com/academics/">
                   Teamworks Academics
                 </Link>
                 , revamped the design system, and launched numerous improvements
-                to the core product (now called{" "}
+                to the core product (now called{' '}
                 <Link href="https://teamworks.com/academics/">
                   Teamworks Operations
                 </Link>
@@ -397,18 +397,18 @@ export default function Home() {
               </Heading>
               <p>
                 Joined as a Product Designer during a period of growth and
-                quickly became the Design Manager. I worked on{" "}
+                quickly became the Design Manager. I worked on{' '}
                 <Link href="https://www.cloudbees.com/jenkins">
                   CloudBees Jenkins
                 </Link>
-                and{" "}
+                and{' '}
                 <Link href="https://www.cloudbees.com/newsroom/cloudbees-launches-cloudbees-devoptics-delivering-unparalleled-devops-team-insights-and">
                   DevOptics
                 </Link>
-                . While I was there we also acquired{" "}
+                . While I was there we also acquired{' '}
                 <Link href="https://www.cloudbees.com/products/codeship">
                   CodeShip
-                </Link>{" "}
+                </Link>{' '}
                 and created a coherent vision for a multi-product UX. I grew the
                 design team from 3 to 8.
               </p>
@@ -436,24 +436,24 @@ export default function Home() {
       <Divider />
       <Section id="elsewhere">
         <Container>
-          <Columns layout={{ md: "1-3" }} gap="5">
+          <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Elsewhere</Heading>
             <div>
               <Heading as="h3">Personal projects</Heading>
-              <div className="flex gap-4 mt-3 mb-6">
-                <div className="flex rounded-2xl justify-center items-center w-[316px] h-[198px] bg-depth-1 border border-border">
+              <div className="mb-6 mt-3 flex gap-4">
+                <div className="flex h-[198px] w-[316px] items-center justify-center rounded-2xl border border-border bg-depth-1">
                   Radiant CMS
                 </div>
-                <div className="flex rounded-2xl justify-center items-center w-[316px] h-[198px] bg-depth-1 border border-border">
+                <div className="flex h-[198px] w-[316px] items-center justify-center rounded-2xl border border-border bg-depth-1">
                   Zest Icons
                 </div>
-                <div className="flex rounded-2xl justify-center items-center w-[316px] h-[198px] bg-depth-1 border border-border">
+                <div className="flex h-[198px] w-[316px] items-center justify-center rounded-2xl border border-border bg-depth-1">
                   Taskpage
                 </div>
               </div>
 
               <Heading as="h3">Social networks</Heading>
-              <div className="flex gap-2 mt-3">
+              <div className="mt-3 flex gap-2">
                 <IconButton
                   href="https://linkedin.com/in/wiseheart"
                   uid="linkedin"
@@ -486,5 +486,5 @@ export default function Home() {
       </Section>
       <Divider />
     </>
-  );
+  )
 }

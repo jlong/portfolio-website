@@ -25,14 +25,14 @@ const gapClasses: { [key: number]: string } = {
 export const ScrollArea = ({
   className,
   direction = 'left',
-  speed = 5,
+  speed = 40,
   gap = 4, // Default gap to Tailwind's "gap-4" (1rem)
   children
 }: {
   className?: string
   direction: 'left' | 'right'
   speed?: number
-  gap?: number // Unitless gap (e.g., 1, 2, 4, 8 for Tailwind's spacing scale)
+  gap?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 // Unitless gap (e.g., 1, 2, 4, 8 for Tailwind's spacing scale)
   children: ReactNode | ReactNode[]
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
@@ -140,8 +140,7 @@ export const ScrollArea = ({
     if (containerRef.current) {
       // Use both deltaY and deltaX to support all scroll directions
       containerRef.current.scrollBy({
-        left: e.deltaX + e.deltaY,
-        behavior: 'smooth'
+        left: e.deltaX
       })
     }
   }
@@ -151,7 +150,13 @@ export const ScrollArea = ({
 
   return (
     <div
-      className={clsx('flex', 'overflow-hidden', gapClass, className)}
+      className={clsx(
+        'scrollarea',
+        'flex',
+        'overflow-x-auto',
+        gapClass,
+        className
+      )}
       ref={containerRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -161,6 +166,15 @@ export const ScrollArea = ({
       {Array.from({ length: duplicateCount }).map((_, index) => (
         <React.Fragment key={index}>{children}</React.Fragment>
       ))}
+      {/* Additional CSS to hide scrollbars */}
+      <style jsx>{`
+        .scrollarea::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollarea {
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   )
 }

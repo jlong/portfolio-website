@@ -2,7 +2,7 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 
 const styles = {
-  link: "w-7 h-7 group flex flex-none items-center justify-center rounded-2xl  bg-depth-2 hover:bg-depth-3",
+  link: "w-7 h-7 group flex flex-none items-center justify-center rounded-2xl  bg-depth-1 hover:bg-depth-2",
   icon: "w-4 h-4 block opacity-80 group-hover:opacity-100",
 };
 

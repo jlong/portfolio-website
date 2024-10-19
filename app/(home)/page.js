@@ -88,7 +88,7 @@ export default function Home() {
                 <strong>Product Designer</strong>, and{" "}
                 <strong>Frontend Engineer</strong>.
               </p>
-              <p className="text-xl">
+              <p className="text-xl/8">
                 My approach to product is grounded in action, prioritizing
                 business objectives based on real customer insights. I believe
                 in quickly testing ideas in production and iterating based on
@@ -99,7 +99,7 @@ export default function Home() {
                 —solving real business problems in a way that creates passionate
                 users.
               </p>
-              <p className="text-xl">
+              <p className="text-xl/8">
                 Collaboration, coaching, and managing by influence are the
                 primary tools I use to lead teams. In the spirit of{" "}
                 <Link href="https://agilemanifesto.org/principles.html">
@@ -249,7 +249,7 @@ export default function Home() {
           <Columns layout={{ md: "1-3" }} gap="5">
             <Heading as="h2">Work history</Heading>
             <div className="prose">
-              <p>
+              <p className="text-xl/8">
                 I’ve worked with SaaS businesses on{" "}
                 <strong>Storefront &amp; Website Builders</strong> (Elastic Path
                 Studio), <strong>User Feedback Tools</strong> (UserVoice),{" "}

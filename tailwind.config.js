@@ -1,137 +1,136 @@
 /** @type {import('tailwindcss').Config} */
 
 export const hues = {
-  'transparent': 'transparent',
-  'current': 'currentColor',
-  'white': '#ffffff',
-  'black': '#131418'
-}
+  transparent: "transparent",
+  current: "currentColor",
+  white: "#ffffff",
+  black: "#131418",
+};
 
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./lib/**/*.{js,ts,jsx,tsx,mdx}"
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
 
   safelist: [
     {
       pattern: /grid-cols-/,
-      variants: ['sm', 'md', 'lg', 'xl', '2xl']
-    }
+      variants: ["sm", "md", "lg", "xl", "2xl"],
+    },
   ],
 
   theme: {
     colors: {
       ...hues,
 
-      'default': hues['black'] + 'cc',
-      'bold': hues['black'],
-      'subtle': hues['black'] + 'a5',
+      default: hues["black"] + "cc",
+      bold: hues["black"],
+      subtle: hues["black"] + "a5",
 
-      'link': '#591cde',
-      'link-hover': '#591cde',
-      'link-visited': '#591cde',
+      link: "#591cde",
+      "link-hover": "#591cde",
+      "link-visited": "#591cde",
 
-      'fancy-underline': '#e25d7d',
+      "fancy-underline": "#e25d7d",
 
-      'depth-0': hues['white'],
-      'depth-1': 'rgba(19,20,24,.03)',
-      'depth-2': 'rgba(19,20,24,.08)',
-      'depth-3': 'rgba(19,20,24,.13)',
-      'depth-4': 'rgba(19,20,24,.18)',
-      'depth-5': 'rgba(19,20,24,.23)',
+      "depth-0": hues["white"],
+      "depth-1": "rgba(19,20,24,.05)",
+      "depth-2": "rgba(19,20,24,.10)",
+      "depth-3": "rgba(19,20,24,.15)",
+      "depth-4": "rgba(19,20,24,.20)",
+      "depth-5": "rgba(19,20,24,.25)",
 
-      'border': 'rgba(19,20,24,.15)',
+      border: "rgba(19,20,24,.15)",
 
-      'icon': hues['black'],
+      icon: hues["black"],
 
-      'button': {
-        'primary' : {
-          'text': hues['white'],
-          'background': '#7147c9',
-          'hover': {
-            'text': hues['white'],
-            'background': '#313a92'
-          }
+      button: {
+        primary: {
+          text: hues["white"],
+          background: "#7147c9",
+          hover: {
+            text: hues["white"],
+            background: "#313a92",
+          },
         },
 
-        'secondary' : {
-          'text': hues['black'] + 'cc',
-          'background': 'rgba(19,20,24,.08)',
-          'hover': {
-            'text': hues['black'],
-            'background': 'rgba(19,20,24,.18)'
-          }
-        }
+        secondary: {
+          text: hues["black"] + "cc",
+          background: "rgba(19,20,24,.1)",
+          hover: {
+            text: hues["black"],
+            background: "rgba(19,20,24,.15)",
+          },
+        },
       },
 
       dark: {
-        default: hues['white'] + 'cc',
-        bold: hues['white'],
-        subtle: hues['white'] + 'a5',
+        default: hues["white"] + "cc",
+        bold: hues["white"],
+        subtle: hues["white"] + "a5",
 
-        link: '#b879ff',
-        'link-hover': '#b879ff',
-        'link-visited': '#b879ff',
+        link: "#b879ff",
+        "link-hover": "#b879ff",
+        "link-visited": "#b879ff",
 
-        'fancy-underline': '#e25d7d',
+        "fancy-underline": "#e25d7d",
 
-        'depth-0': '#110718',
-        'depth-1': 'rgba(255,255,255,.1)',
-        'depth-2': 'rgba(255,255,255,.15)',
-        'depth-3': 'rgba(255,255,255,.2)',
-        'depth-4': 'rgba(255,255,255,.25)',
-        'depth-5': 'rgba(255,255,255,.3)',
+        "depth-0": "#110718",
+        "depth-1": "rgba(255,255,255,.10)",
+        "depth-2": "rgba(255,255,255,.15)",
+        "depth-3": "rgba(255,255,255,.20)",
+        "depth-4": "rgba(255,255,255,.25)",
+        "depth-5": "rgba(255,255,255,.30)",
 
-        'border': 'rgba(255,255,255,.3)',
+        border: "rgba(255,255,255,.3)",
 
-        'icon': hues['white'],
+        icon: hues["white"],
 
-        'button': {
-          'primary' : {
-            'text': hues['white'],
-            'background': '#7147c9',
-            'hover': {
-              'text': hues['white'],
-              'background': '#313a92'
-            }
+        button: {
+          primary: {
+            text: hues["white"],
+            background: "#7147c9",
+            hover: {
+              text: hues["white"],
+              background: "#313a92",
+            },
           },
 
-          'secondary' : {
-            'text': hues['white'],
-            'background': 'rgba(255,255,255,.1)',
-            'hover': {
-              'text': hues['white'],
-              'background': 'rgba(255,255,255,.2)'
-            }
-          }
+          secondary: {
+            text: hues["white"],
+            background: "rgba(255,255,255,.1)",
+            hover: {
+              text: hues["white"],
+              background: "rgba(255,255,255,.2)",
+            },
+          },
         },
       },
-
     },
 
     fontFamily: {
-      display: ['var(--font-manrope)', 'sans-serif'],
-      body: ['var(--font-source-sans-3)', 'sans-serif']
+      display: ["var(--font-manrope)", "sans-serif"],
+      body: ["var(--font-geist-sans)", "sans-serif"],
     },
 
     spacing: {
-      0: '0',
-      0.25: '2px',
-      0.5: '4px',
-      1: '8px',
-      1.5: '12px',
-      2: '16px',
-      2.5: '20px',
-      3: '24px',
-      4: '32px',
-      5: '40px',
-      6: '48px',
-      7: '56px',
-      8: '64px',
-      9: '72px',
-      10: '80px',
+      0: "0",
+      0.25: "2px",
+      0.5: "4px",
+      1: "8px",
+      1.5: "12px",
+      2: "16px",
+      2.5: "20px",
+      3: "24px",
+      4: "32px",
+      5: "40px",
+      6: "48px",
+      7: "56px",
+      8: "64px",
+      9: "72px",
+      10: "80px",
     },
 
     opacity: {
@@ -154,39 +153,36 @@ module.exports = {
       85: 0.85,
       90: 0.9,
       95: 0.95,
-      100: 1
+      100: 1,
     },
 
     gridTemplateColumns: {
-      '3-1': '40fr 13fr',
-      '1-3': '13fr 40fr'
+      "3-1": "40fr 13fr",
+      "1-3": "13fr 40fr",
     },
 
     extend: {
-      typography: ({theme}) => ({
+      typography: ({ theme }) => ({
         default: {
           css: {
-            '--tw-prose-body': theme('colors.normal'),
-            '--tw-prose-headings': theme('colors.bold'),
-            '--tw-prose-lead': theme('colors.normal'),
-            '--tw-prose-links': theme('colors.link'),
-            '--tw-prose-bold': theme('colors.bold'),
-            '--tw-prose-counters': theme('colors.default'),
-            '--tw-prose-bullets': theme('colors.brand'),
-            '--tw-prose-hr': theme('colors[dark-rule]'),
-            '--tw-prose-quotes': theme('colors.brand'),
-            '--tw-prose-quote-borders': theme('colors.brand'),
-            '--tw-prose-captions': theme('colors.normal'),
-            '--tw-prose-code': theme('colors.normal'),
-            '--tw-prose-pre-code': theme('colors.normal'),
-          }
-        }
-      })
-    }
+            "--tw-prose-body": theme("colors.normal"),
+            "--tw-prose-headings": theme("colors.bold"),
+            "--tw-prose-lead": theme("colors.normal"),
+            "--tw-prose-links": theme("colors.link"),
+            "--tw-prose-bold": theme("colors.bold"),
+            "--tw-prose-counters": theme("colors.default"),
+            "--tw-prose-bullets": theme("colors.brand"),
+            "--tw-prose-hr": theme("colors[dark-rule]"),
+            "--tw-prose-quotes": theme("colors.brand"),
+            "--tw-prose-quote-borders": theme("colors.brand"),
+            "--tw-prose-captions": theme("colors.normal"),
+            "--tw-prose-code": theme("colors.normal"),
+            "--tw-prose-pre-code": theme("colors.normal"),
+          },
+        },
+      }),
+    },
   },
 
-  plugins: [
-    require('@tailwindcss/typography')
-  ]
-}
-
+  plugins: [require("@tailwindcss/typography")],
+};

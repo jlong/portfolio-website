@@ -1,13 +1,13 @@
-import { Analytics } from '@vercel/analytics/react'
-import './globals.css'
-import { manrope } from '@/lib/fonts'
+import { Analytics } from "@vercel/analytics/react";
+import "./globals.css";
+import { manrope, geist } from "@/lib/fonts";
 
 export const metadata = {
-  metadataBase: new URL('https://hire.johnwlong.com'),
-  title: 'Hire John W. Long',
-  description: 'A multi-discipline product leader with 20+ years experience building web apps & leading software teams. Currently seeking a leadership role where I can collaborate on  product and design.'
-}
-
+  metadataBase: new URL("https://hire.johnwlong.com"),
+  title: "Hire John W. Long",
+  description:
+    "A multi-discipline product leader with 20+ years experience building web apps & leading software teams. Currently seeking a leadership role where I can collaborate on  product and design.",
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`
         ${manrope.variable}
+        ${geist.variable}
       `}
     >
       <body>
@@ -22,5 +23,5 @@ export default function RootLayout({ children }) {
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

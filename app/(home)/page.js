@@ -29,6 +29,7 @@ import thughes from "@/images/avatars/tim-hughes.jpg";
 import dmorley from "@/images/avatars/dan-morley.jpg";
 import kmalhi from "@/images/avatars/karan-malhi.jpg";
 import dstover from "@/images/avatars/david-stover.jpg";
+import gdeken from "@/images/avatars/grant-deken.jpg";
 import rwhite from "@/images/avatars/richard-white.jpg";
 import jdumay from "@/images/avatars/james-dumay.jpg";
 import smoseley from "@/images/avatars/steven-moseley.jpg";
@@ -115,7 +116,7 @@ export default function Home() {
             </div>
           </Columns>
         </Container>
-        <ScrollArea direction="left" speed={5} className="-mx-2">
+        <ScrollArea direction="left" speed={40} className="-mx-2">
           <Card>
             <BigQuote>
               <p>
@@ -184,6 +185,23 @@ export default function Home() {
                 <PersonTitle>
                   Director of Product Management, Elastic Path
                 </PersonTitle>
+              </PersonDetails>
+            </Person>
+          </Card>
+          <Card>
+            <BigQuote>
+              <p>
+                John is one of those rare people who bring expertise across
+                design, product, and software development. He’s a great leader
+                and ardent defender of the customer. As a result, every product
+                John touches gets better.
+              </p>
+            </BigQuote>
+            <Person>
+              <Avatar alt="" src={gdeken} size={48} />
+              <PersonDetails>
+                <PersonName>Grant Deken</PersonName>
+                <PersonTitle>CEO, Unstack</PersonTitle>
               </PersonDetails>
             </Person>
           </Card>

@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
       className={`
         ${manrope.variable}
         ${geist.variable}
+        scroll-smooth
       `}
     >
       <body>

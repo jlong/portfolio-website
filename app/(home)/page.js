@@ -78,7 +78,7 @@ export default function Home() {
         </ScrollArea>
       </Section>
       <Divider />
-      <Section>
+      <Section id="about">
         <Container>
           <Columns layout={{ md: "1-3" }} gap="5">
             <Heading as="h2">About me</Heading>
@@ -244,7 +244,7 @@ export default function Home() {
         </ScrollArea>
       </Section>
       <Divider />
-      <Section>
+      <Section id="work">
         <Container>
           <Columns layout={{ md: "1-3" }} gap="5">
             <Heading as="h2">Work history</Heading>
@@ -404,7 +404,7 @@ export default function Home() {
         </Container>
       </Section>
       <Divider />
-      <Section>
+      <Section id="elsewhere">
         <Container>
           <Columns layout={{ md: "1-3" }} gap="5">
             <Heading as="h2">Elsewhere</Heading>

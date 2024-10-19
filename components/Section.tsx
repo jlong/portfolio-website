@@ -31,18 +31,21 @@ const paddingYClass = {
 };
 
 export const Section = ({
+  id,
   className,
   paddingX = 2.5,
   paddingY = 10,
   children,
 }: {
-  className: string;
+  id?: string;
+  className?: string;
   paddingX: 0 | 1 | 2 | 2.5 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   paddingY: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   children: ReactNode | ReactNode[];
 }) => {
   return (
     <section
+      id={id}
       className={clsx(
         "flex",
         "flex-col",

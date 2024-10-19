@@ -1,18 +1,18 @@
-import React, { ReactNode } from "react";
-import clsx from "clsx";
+import React, { ReactNode } from 'react'
+import clsx from 'clsx'
 
 export const BigQuote = ({
   className,
-  children,
+  children
 }: {
-  className: string;
-  children: ReactNode | ReactNode[];
+  className: string
+  children: ReactNode | ReactNode[]
 }) => {
   return (
     <blockquote
-      className={clsx("flex", "flex-col", "gap-4", "prose", "grow", className)}
+      className={clsx('flex', 'flex-col', 'gap-4', 'prose', 'grow', className)}
     >
       {children}
     </blockquote>
-  );
-};
+  )
+}

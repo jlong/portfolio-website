@@ -1,16 +1,16 @@
-import React, { ReactNode } from "react";
-import clsx from "clsx";
+import React, { ReactNode } from 'react'
+import clsx from 'clsx'
 
 export const Box = ({
   className,
-  children,
+  children
 }: {
-  className: string;
-  children: ReactNode | ReactNode[];
+  className: string
+  children: ReactNode | ReactNode[]
 }) => {
   return (
-    <div className={clsx("flex", "flex-col", "gap-4", className)}>
+    <div className={clsx('flex', 'flex-col', 'gap-4', className)}>
       {children}
     </div>
-  );
-};
+  )
+}

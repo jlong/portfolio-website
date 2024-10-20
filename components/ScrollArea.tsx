@@ -63,10 +63,15 @@ export const ScrollArea = ({
           const directionMultiplier = direction === 'left' ? 1 : -1
           const currentScroll = containerRef.current.scrollLeft
 
-          // Calculate the new scroll position, respecting the current scroll position
-          const resetPosition = originalContentWidth.current + gapSize.current
-          const newScrollPosition =
-            (currentScroll + scrollAmount * directionMultiplier) % resetPosition
+          // Calculate the total width including gaps to determine the reset point
+          const resetScrollAt = originalContentWidth.current + gapSize.current
+          let newScrollPosition =
+            (currentScroll + scrollAmount * directionMultiplier) % resetScrollAt
+
+          // Adjust for negative positions (when scrolling right)
+          if (newScrollPosition < 0) {
+            newScrollPosition += totalSetWidth
+          }
 
           containerRef.current.scrollTo({
             left: newScrollPosition
@@ -105,10 +110,10 @@ export const ScrollArea = ({
         0,
         Math.floor(containerRef.current.children.length / (duplicateCount + 1))
       )
-      console.log(originalChildren)
+
       let totalWidth = 0
 
-      // Sum up the width of each child including margins set by CSS
+      // Sum up the width of each child
       originalChildren.forEach((child) => {
         const childElement = child as HTMLElement
         const width = childElement.offsetWidth
@@ -176,7 +181,7 @@ export const ScrollArea = ({
       {/* Render the original content */}
       {children}
 
-      {/* Render enough duplicates to cover the container */}
+      {/* Render enough duplicates to cover the component */}
       {Array.from({ length: duplicateCount }).map((_, index) => (
         <React.Fragment key={index}>{children}</React.Fragment>
       ))}

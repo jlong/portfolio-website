@@ -69,7 +69,7 @@ export default function Home() {
         </Container>
       </Section>
       <Section paddingY="8" paddingX={0}>
-        <ScrollArea gap="10" direction="left">
+        <ScrollArea gap="10" direction="right">
           <Image alt="ElasticPath" src={elasticpath} width={179} height={42} />
           <Image alt="Unstack" src={unstack} width={191} height={28} />
           <Image alt="Launchable" src={launchable} width={213} height={44} />

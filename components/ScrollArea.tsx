@@ -70,7 +70,7 @@ export const ScrollArea = ({
 
           // Adjust for negative positions (when scrolling right)
           if (newScrollPosition < 0) {
-            newScrollPosition += totalSetWidth
+            newScrollPosition += resetScrollAt
           }
 
           containerRef.current.scrollTo({

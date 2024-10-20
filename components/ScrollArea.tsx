@@ -37,7 +37,8 @@ export const ScrollArea = ({
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const originalContentWidth = useRef<number>(0)
-  const [duplicateCount, setDuplicateCount] = useState(2) // Dynamically adjust duplicates
+  const gapSize = useRef<number>(0) // Store the actual gap size in pixels
+  const [duplicateCount, setDuplicateCount] = useState(1) // Default to one duplicate
   const animationFrameId = useRef<number | null>(null)
   const lastTimestamp = useRef<number | null>(null)
   const accumulatedOffset = useRef<number>(0) // Track the accumulated offset
@@ -60,23 +61,19 @@ export const ScrollArea = ({
         const scrollAmount = Math.floor(accumulatedOffset.current)
         if (scrollAmount !== 0) {
           const directionMultiplier = direction === 'left' ? 1 : -1
-          containerRef.current.scrollBy({
-            left: scrollAmount * directionMultiplier,
-            behavior: 'auto'
+          const currentScroll = containerRef.current.scrollLeft
+
+          // Calculate the new scroll position, respecting the current scroll position
+          const resetPosition = originalContentWidth.current + gapSize.current
+          const newScrollPosition =
+            (currentScroll + scrollAmount * directionMultiplier) % resetPosition
+
+          containerRef.current.scrollTo({
+            left: newScrollPosition
           })
 
           // Subtract the integer part from the accumulated offset, keeping the remainder
           accumulatedOffset.current -= scrollAmount
-
-          // Handle infinite loop by moving scrolled-off content to the end
-          if (
-            containerRef.current.scrollLeft >=
-            originalContentWidth.current * duplicateCount
-          ) {
-            // Reset to the start of the original set when reaching the end of the cloned set
-            containerRef.current.scrollLeft -=
-              originalContentWidth.current * duplicateCount
-          }
 
           lastTimestamp.current = timestamp
         }
@@ -84,7 +81,7 @@ export const ScrollArea = ({
 
       animationFrameId.current = requestAnimationFrame(scroll)
     },
-    [isPaused, direction, speed, duplicateCount]
+    [isPaused, direction, speed]
   )
 
   useEffect(() => {
@@ -101,51 +98,65 @@ export const ScrollArea = ({
     }
   }, [isPaused, scroll])
 
-  // Dynamically calculate the width of the original set of cards
+  // Dynamically calculate the width of the original set of cards and the gap size
   useEffect(() => {
     if (containerRef.current) {
       const originalChildren = Array.from(containerRef.current.children).slice(
         0,
-        containerRef.current.children.length / duplicateCount
+        Math.floor(containerRef.current.children.length / (duplicateCount + 1))
       )
+      console.log(originalChildren)
       let totalWidth = 0
 
       // Sum up the width of each child including margins set by CSS
       originalChildren.forEach((child) => {
         const childElement = child as HTMLElement
-        const style = getComputedStyle(childElement)
         const width = childElement.offsetWidth
-        const marginRight = parseFloat(style.marginRight)
-        totalWidth += width + marginRight
+        totalWidth += width
       })
+
+      // Determine the gap size (e.g., based on the Tailwind `gap-X` equivalent)
+      const containerStyle = getComputedStyle(containerRef.current)
+      const actualGap = parseFloat(containerStyle.getPropertyValue('gap'))
+      gapSize.current = isNaN(actualGap) ? 0 : actualGap
+
+      // Add gaps into total width
+      totalWidth += gapSize.current * (originalChildren.length - 1)
 
       originalContentWidth.current = totalWidth
 
-      // Adjust duplicate count based on the container's width
+      // Determine how many duplicates are needed
       const containerWidth = containerRef.current.clientWidth
+      let newDuplicateCount = 1
       if (originalContentWidth.current < containerWidth) {
-        const duplicatesNeeded =
+        // Case 1: Original content is less than container width
+        newDuplicateCount =
           Math.ceil(containerWidth / originalContentWidth.current) + 1
-        setDuplicateCount(duplicatesNeeded)
-      } else {
-        setDuplicateCount(2)
+      }
+
+      // Only update if it changes to prevent infinite loops
+      if (newDuplicateCount !== duplicateCount) {
+        setDuplicateCount(newDuplicateCount)
       }
     }
-  }, [children, gap])
+  }, [children, gap, duplicateCount])
 
   const handleMouseEnter = () => setIsPaused(true)
-  const handleMouseLeave = () => setIsPaused(false)
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+    lastTimestamp.current = null // Reset timestamp to prevent snapping
+    accumulatedOffset.current = 0 // Reset accumulated offset to prevent jumps
+  }
 
   const handleWheelScroll = (e: React.WheelEvent) => {
     if (containerRef.current) {
-      // Use both deltaY and deltaX to support all scroll directions
       containerRef.current.scrollBy({
         left: e.deltaX
       })
     }
   }
 
-  // Use predefined Tailwind gap classes
   const gapClass = gapClasses[gap] || 'gap-4' // Default to "gap-4" if the value isn't in the map
 
   return (
@@ -162,11 +173,15 @@ export const ScrollArea = ({
       onMouseLeave={handleMouseLeave}
       onWheel={handleWheelScroll}
     >
+      {/* Render the original content */}
+      {children}
+
       {/* Render enough duplicates to cover the container */}
       {Array.from({ length: duplicateCount }).map((_, index) => (
         <React.Fragment key={index}>{children}</React.Fragment>
       ))}
-      {/* Additional CSS to hide scrollbars */}
+
+      {/* Hide scrollbars */}
       <style jsx>{`
         .scrollarea::-webkit-scrollbar {
           display: none;

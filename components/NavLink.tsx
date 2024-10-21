@@ -10,15 +10,15 @@ const NavLink = ({
   selectedClassName,
   href,
   children,
-  exact=false,
-  underline=false,
+  exact = false,
+  underline = false,
   ...props
 }: {
-  className?: string,
-  selectedClassName?: string,
-  href: string,
-  children: ReactNode | ReactNode[],
-  exact: boolean,
+  className?: string
+  selectedClassName?: string
+  href: string
+  children: ReactNode | ReactNode[]
+  exact?: boolean
   underline: boolean
 }) => {
   const pathname = usePathname()
@@ -32,13 +32,15 @@ const NavLink = ({
       {children}
       {underline && matches ? (
         <motion.span
-          className={`absolute left-0 bottom-0 right-0 h-[2px] bg-link-hover`}
+          className={`absolute bottom-0 left-0 right-0 h-[2px] bg-link-hover`}
           layoutId="underline"
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          exit={{opacity: 0}}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         />
-      ) : ''}
+      ) : (
+        ''
+      )}
     </Link>
   )
 }

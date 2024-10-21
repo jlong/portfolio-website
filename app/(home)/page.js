@@ -85,7 +85,7 @@ export default function Home() {
       </Section>
       <Divider />
       <Section className="relative">
-        <div id="about" className="absolute -mt-[120px]" />
+        <a id="about" className="absolute -mt-[120px]"></a>
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">About me</Heading>
@@ -269,7 +269,7 @@ export default function Home() {
       </Section>
       <Divider />
       <Section className="relative">
-        <div id="work" className="absolute -mt-[120px]" />
+        <a id="work" className="absolute -mt-[120px]"></a>
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Work history</Heading>
@@ -442,7 +442,7 @@ export default function Home() {
       </Section>
       <Divider />
       <Section className="relative">
-        <div id="elsewhere" className="absolute -mt-[120px]" />
+        <a id="elsewhere" className="absolute -mt-[120px]"></a>
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Elsewhere</Heading>

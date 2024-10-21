@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
       `}
     >
       <body>
+        <a href="#top"></a>
         {children}
         <Analytics />
       </body>

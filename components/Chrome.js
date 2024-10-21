@@ -5,8 +5,8 @@ import logo from '@/images/logo.svg'
 import NavLink from '@/components/NavLink'
 import { Button } from '@/components/Button'
 
-const Logo = ({}) => (
-  <Link href="/">
+const Logo = ({ href }) => (
+  <Link href={href}>
     <Image src={logo} width="48" height="48" alt="John W. Long" />
   </Link>
 )
@@ -51,11 +51,11 @@ const Chrome = ({ children }) => (
   <>
     <Header>
       <div className="flex gap-4">
-        <Logo href="/" className="p-0.5" />
-        <Nav>
-          <NavItem href="#about">About me</NavItem>
-          <NavItem href="#work">Work history</NavItem>
-          <NavItem href="#elsewhere">Elsewhere</NavItem>
+        <Logo href="/#top" />
+        <Nav className>
+          <NavItem href="/#about">About me</NavItem>
+          <NavItem href="/#work">Work history</NavItem>
+          <NavItem href="/#elsewhere">Elsewhere</NavItem>
         </Nav>
       </div>
       <Button size="small">Get in touch</Button>

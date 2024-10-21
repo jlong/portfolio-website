@@ -84,7 +84,8 @@ export default function Home() {
         </AutoScroller>
       </Section>
       <Divider />
-      <Section id="about">
+      <Section className="relative">
+        <div id="about" className="absolute -mt-[120px]" />
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">About me</Heading>
@@ -267,7 +268,8 @@ export default function Home() {
         </AutoScroller>
       </Section>
       <Divider />
-      <Section id="work">
+      <Section className="relative">
+        <div id="work" className="absolute -mt-[120px]" />
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Work history</Heading>
@@ -439,7 +441,8 @@ export default function Home() {
         </Container>
       </Section>
       <Divider />
-      <Section id="elsewhere">
+      <Section className="relative">
+        <div id="elsewhere" className="absolute -mt-[120px]" />
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Elsewhere</Heading>

@@ -2,6 +2,7 @@
 
 import { clsx } from 'clsx'
 import React, { useRef, useState, useEffect, ReactNode } from 'react'
+import Icon from '@/components/Icon'
 
 export const ButtonScroller = ({
   className,
@@ -43,9 +44,21 @@ export const ButtonScroller = ({
       // Attach scroll event listener
       scrollContainer.addEventListener('scroll', checkForScrollPosition)
 
-      // Clean up the event listener
+      // Attach resize observer
+      let resizeObserver: ResizeObserver | null = null
+      if (typeof ResizeObserver !== 'undefined') {
+        resizeObserver = new ResizeObserver(() => {
+          checkForScrollPosition()
+        })
+        resizeObserver.observe(scrollContainer)
+      }
+
+      // Clean up the event listeners
       return () => {
         scrollContainer.removeEventListener('scroll', checkForScrollPosition)
+        if (resizeObserver) {
+          resizeObserver.disconnect()
+        }
       }
     }
   }, [])
@@ -58,11 +71,11 @@ export const ButtonScroller = ({
           className={clsx(
             'absolute bottom-0 left-0 top-0 z-10',
             'flex items-center justify-center',
-            'bg-white bg-opacity-70 p-2'
+            'bg-white/70 p-2'
           )}
           onClick={() => scrollByOffset(-(scroller.current?.clientWidth || 0))}
         >
-          &#9664;
+          <Icon uid="left-chevron" />
         </button>
       )}
 
@@ -84,11 +97,11 @@ export const ButtonScroller = ({
           className={clsx(
             'absolute bottom-0 right-0 top-0 z-10',
             'flex items-center justify-center',
-            'bg-white bg-opacity-70 p-2'
+            'bg-white/70 p-2'
           )}
           onClick={() => scrollByOffset(scroller.current?.clientWidth || 0)}
         >
-          &#9654;
+          <Icon uid="right-chevron" />
         </button>
       )}
     </div>

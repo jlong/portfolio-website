@@ -1,7 +1,13 @@
 'use client'
 
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  ReactNode,
+  CSSProperties
+} from 'react'
 import { clsx } from 'clsx'
-import React, { useRef, useState, useEffect, ReactNode } from 'react'
 import Icon from '@/components/Icon'
 
 export const ButtonScroller = ({
@@ -63,15 +69,43 @@ export const ButtonScroller = ({
     }
   }, [])
 
+  // Compute the mask style based on scroll position
+  const maskStyle = React.useMemo(() => {
+    if (canScrollLeft && canScrollRight) {
+      return {
+        maskImage:
+          'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+        WebkitMaskImage:
+          'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+      } as CSSProperties
+    } else if (canScrollLeft) {
+      return {
+        maskImage:
+          'linear-gradient(to right, transparent, transparent 16px, black 48px, black)',
+        WebkitMaskImage:
+          'linear-gradient(to right, transparent, transparent 16px, black 48px, black)'
+      } as CSSProperties
+    } else if (canScrollRight) {
+      return {
+        maskImage:
+          'linear-gradient(to right, black, black calc(100% - 48px), transparent calc(100% - 16px), transparent)',
+        WebkitMaskImage:
+          'linear-gradient(to right, black, black calc(100% - 48px), transparent calc(100% - 16px), transparent)'
+      } as CSSProperties
+    } else {
+      return {}
+    }
+  }, [canScrollLeft, canScrollRight])
+
   return (
     <div className={clsx('relative', 'w-full', className)}>
       {canScrollLeft && (
         <button
           aria-label="Scroll left"
           className={clsx(
-            'absolute bottom-0 left-0 top-0 z-10',
+            'absolute left-0 top-1/2 z-10 -translate-y-1/2 transform',
             'flex items-center justify-center',
-            'bg-white/70 p-2'
+            'rounded-full bg-depth-2 p-1 backdrop-blur-lg hover:bg-depth-3'
           )}
           onClick={() => scrollByOffset(-(scroller.current?.clientWidth || 0))}
         >
@@ -82,11 +116,11 @@ export const ButtonScroller = ({
       <div
         ref={scroller}
         className={clsx(
-          'scrollbar-hidden',
-          'flex gap-4',
-          'w-full',
-          'overflow-x-auto'
+          'flex w-full gap-4',
+          'scrollbar-hidden overflow-x-auto',
+          'transition-all duration-300'
         )}
+        style={maskStyle}
       >
         {children}
       </div>
@@ -95,9 +129,9 @@ export const ButtonScroller = ({
         <button
           aria-label="Scroll right"
           className={clsx(
-            'absolute bottom-0 right-0 top-0 z-10',
+            'absolute right-0 top-1/2 z-10 -translate-y-1/2 transform',
             'flex items-center justify-center',
-            'bg-white/70 p-2'
+            'rounded-full bg-depth-2 p-1 backdrop-blur-lg hover:bg-depth-3'
           )}
           onClick={() => scrollByOffset(scroller.current?.clientWidth || 0)}
         >

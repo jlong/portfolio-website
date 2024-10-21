@@ -4,7 +4,8 @@ export const hues = {
   transparent: 'transparent',
   current: 'currentColor',
   white: '#ffffff',
-  black: '#131418'
+  black: '#131418',
+  pink: '#f74874'
 }
 
 module.exports = {
@@ -134,6 +135,7 @@ module.exports = {
     },
 
     opacity: {
+      0: 0,
       5: 0.05,
       10: 0.1,
       15: 0.15,

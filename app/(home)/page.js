@@ -33,7 +33,11 @@ import gdeken from '@/images/avatars/grant-deken.jpg'
 import rwhite from '@/images/avatars/richard-white.jpg'
 import jdumay from '@/images/avatars/james-dumay.jpg'
 import smoseley from '@/images/avatars/steven-moseley.jpg'
+import { ZestIconsLogo } from '@/components/Images/ZestIconsLogo'
+import { RadiantCMSLogo } from '@/components/Images/RadiantCMSLogo'
+import { TaskpageLogo } from '@/components/Images/TaskpageLogo'
 import IconButton from '@/components/IconButton'
+import { ImageWell } from '@/components/ImageWell'
 
 export default function Home() {
   return (
@@ -441,15 +445,19 @@ export default function Home() {
             <div>
               <Heading as="h3">Personal projects</Heading>
               <div className="mb-6 mt-3 flex gap-4">
-                <div className="flex h-[198px] w-[316px] items-center justify-center rounded-2xl border border-border bg-depth-1">
-                  Radiant CMS
-                </div>
-                <div className="flex h-[198px] w-[316px] items-center justify-center rounded-2xl border border-border bg-depth-1">
-                  Zest Icons
-                </div>
-                <div className="flex h-[198px] w-[316px] items-center justify-center rounded-2xl border border-border bg-depth-1">
-                  Taskpage
-                </div>
+                <ImageWell href="https://github.com/radiant/radiant" zoom>
+                  <RadiantCMSLogo />
+                </ImageWell>
+                <ImageWell href="https://zesticons.com" zoom>
+                  <ZestIconsLogo />
+                </ImageWell>
+                <ImageWell
+                  ribbon="Coming soon!"
+                  className="cursor-not-allowed"
+                  zoom
+                >
+                  <TaskpageLogo />
+                </ImageWell>
               </div>
 
               <Heading as="h3">Social networks</Heading>

@@ -349,7 +349,7 @@ export default function Home() {
               </Heading>
               <p>
                 Joined up with two of{' '}
-                <Link href="https://kohsuke.org/">Kohsuke Kawaguchi</Link> and
+                <Link href="https://kohsuke.org/">Kohsuke Kawaguchi</Link> and{' '}
                 <Link href="https://entrepreneurshipunlocked.substack.com/">
                   Harpreet Singh
                 </Link>{' '}

@@ -6,6 +6,7 @@ export const RadiantCMSLogo = () => (
     fill="none"
     className="text-bold"
   >
+    <title>Radiant CMS</title>
     <g clipPath="url(#a)">
       <path
         fill="url(#b)"
@@ -48,7 +49,7 @@ export const RadiantCMSLogo = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#fff" />
-        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+        <stop offset="1" stopColor="#fff" stopOpacity="0" />
       </linearGradient>
       <radialGradient
         id="d"
@@ -58,8 +59,8 @@ export const RadiantCMSLogo = () => (
         gradientTransform="matrix(-15.338 17.965 -32.993 -28.169 49.654 17.22)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#fff" />
-        <stop offset="1" stop-color="#fff" stop-opacity=".8" />
+        <stop stopColor="#fff" />
+        <stop offset="1" stopColor="#fff" stopOpacity=".8" />
       </radialGradient>
       <clipPath id="a">
         <path fill="#fff" d="M0 0h242v45H0z" />

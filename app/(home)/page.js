@@ -8,7 +8,7 @@ import { Columns } from '@/components/Columns'
 import { Actions } from '@/components/Actions'
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
-import { ScrollArea } from '@/components/ScrollArea'
+import { AutoScroller } from '@/components/AutoScroller'
 import { Card } from '@/components/Card'
 import { BigQuote } from '@/components/BigQuote'
 import { Avatar } from '@/components/Avatar'
@@ -33,6 +33,7 @@ import gdeken from '@/images/avatars/grant-deken.jpg'
 import rwhite from '@/images/avatars/richard-white.jpg'
 import jdumay from '@/images/avatars/james-dumay.jpg'
 import smoseley from '@/images/avatars/steven-moseley.jpg'
+import { ButtonScroller } from '@/components/ButtonScroller'
 import { ZestIconsLogo } from '@/components/Images/ZestIconsLogo'
 import { RadiantCMSLogo } from '@/components/Images/RadiantCMSLogo'
 import { TaskpageLogo } from '@/components/Images/TaskpageLogo'
@@ -73,14 +74,14 @@ export default function Home() {
         </Container>
       </Section>
       <Section paddingY="8" paddingX={0}>
-        <ScrollArea gap="10" direction="right">
+        <AutoScroller gap="10" direction="right">
           <Image alt="ElasticPath" src={elasticpath} width={179} height={42} />
           <Image alt="Unstack" src={unstack} width={191} height={28} />
           <Image alt="Launchable" src={launchable} width={213} height={44} />
           <Image alt="Teamworks" src={teamworks} width={213} height={52} />
           <Image alt="CloudBees" src={cloudbees} width={201} height={32} />
           <Image alt="UserVoice" src={uservoice} width={206} height={28} />
-        </ScrollArea>
+        </AutoScroller>
       </Section>
       <Divider />
       <Section id="about">
@@ -120,7 +121,7 @@ export default function Home() {
             </div>
           </Columns>
         </Container>
-        <ScrollArea className="-mx-2">
+        <AutoScroller className="-mx-2">
           <Card>
             <BigQuote>
               <p>
@@ -263,7 +264,7 @@ export default function Home() {
               </PersonDetails>
             </Person>
           </Card>
-        </ScrollArea>
+        </AutoScroller>
       </Section>
       <Divider />
       <Section id="work">
@@ -442,9 +443,9 @@ export default function Home() {
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Elsewhere</Heading>
-            <div>
+            <div className="w-full overflow-hidden">
               <Heading as="h3">Personal projects</Heading>
-              <div className="mb-6 mt-3 flex gap-4">
+              <ButtonScroller className="mb-4 mt-2">
                 <ImageWell href="https://github.com/radiant/radiant" zoom>
                   <RadiantCMSLogo />
                 </ImageWell>
@@ -458,7 +459,7 @@ export default function Home() {
                 >
                   <TaskpageLogo />
                 </ImageWell>
-              </div>
+              </ButtonScroller>
 
               <Heading as="h3">Social networks</Heading>
               <div className="mt-3 flex gap-2">

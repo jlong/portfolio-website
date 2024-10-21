@@ -22,7 +22,7 @@ const gapClasses: { [key: number]: string } = {
   10: 'gap-10'
 }
 
-export const ScrollArea = ({
+export const AutoScroller = ({
   className,
   direction = 'left',
   speed = 40,
@@ -167,7 +167,7 @@ export const ScrollArea = ({
   return (
     <div
       className={clsx(
-        'scrollarea',
+        'scrollbar-hidden',
         'flex',
         'overflow-x-auto',
         gapClass,
@@ -185,16 +185,6 @@ export const ScrollArea = ({
       {Array.from({ length: duplicateCount }).map((_, index) => (
         <React.Fragment key={index}>{children}</React.Fragment>
       ))}
-
-      {/* Hide scrollbars */}
-      <style jsx>{`
-        .scrollarea::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollarea {
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   )
 }

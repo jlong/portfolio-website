@@ -5,7 +5,7 @@ export const Box = ({
   className,
   children
 }: {
-  className: string
+  className?: string
   children: ReactNode | ReactNode[]
 }) => {
   return (

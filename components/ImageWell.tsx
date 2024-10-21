@@ -25,6 +25,7 @@ export const ImageWell = ({
         'group',
         'relative',
         'flex items-center justify-center',
+        'shrink-0',
         'h-[198px] w-[316px]',
         'rounded-2xl border border-border bg-depth-1',
         'overflow-clip',

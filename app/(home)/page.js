@@ -39,6 +39,7 @@ import { RadiantCMSLogo } from '@/components/Images/RadiantCMSLogo'
 import { TaskpageLogo } from '@/components/Images/TaskpageLogo'
 import IconButton from '@/components/IconButton'
 import { ImageWell } from '@/components/ImageWell'
+import { Modal } from '@/components/Modal'
 
 export default function Home() {
   return (
@@ -52,7 +53,7 @@ export default function Home() {
                 leader with 20+ years experience building web apps &amp; leading
                 software teams.
               </Heading>
-              <p className="text-3xl/tight text-default">
+              <p className="text-2xl/tight text-default md:text-3xl/tight">
                 Currently seeking a leadership role where I can collaborate on{' '}
                 <strong className="text-bold">product</strong> and{' '}
                 <strong className="text-bold">design</strong>.
@@ -61,11 +62,12 @@ export default function Home() {
                 <Button kind="primary" size="large">
                   Get in touch
                 </Button>
+                <Link href="/#contact">Get in touch</Link>
               </Actions>
             </Box>
             <Image
               alt=""
-              className="self-center"
+              className="hidden self-center md:block"
               src={portrait}
               width="428"
               height="520"
@@ -467,26 +469,31 @@ export default function Home() {
               <Heading as="h3">Social networks</Heading>
               <div className="mt-3 flex gap-2">
                 <IconButton
+                  as={Link}
                   href="https://linkedin.com/in/wiseheart"
                   uid="linkedin"
                   tip="LinkedIn"
                 />
                 <IconButton
+                  as={Link}
                   href="https://dribbble.com/johnwlong"
                   uid="dribbble"
                   tip="Dribbble"
                 />
                 <IconButton
+                  as={Link}
                   href="https://github.com/jlong"
                   uid="github"
                   tip="GitHub"
                 />
                 <IconButton
+                  as={Link}
                   href="https://codepen.io/jlong"
                   uid="codepen"
                   tip="CodePen"
                 />
                 <IconButton
+                  as={Link}
                   href="https://twitter.com/johnwlong"
                   uid="twitter"
                   tip="Twitter"

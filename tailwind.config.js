@@ -43,7 +43,10 @@ module.exports = {
       'depth-4': 'rgba(19,20,24,.20)',
       'depth-5': 'rgba(19,20,24,.25)',
 
-      border: 'rgba(19,20,24,.15)',
+      border: {
+        DEFAULT: 'rgba(19,20,24,.15)',
+        focus: '#7945e5'
+      },
 
       icon: hues['black'],
 
@@ -85,7 +88,10 @@ module.exports = {
         'depth-4': 'rgba(255,255,255,.25)',
         'depth-5': 'rgba(255,255,255,.30)',
 
-        border: 'rgba(255,255,255,.3)',
+        border: {
+          DEFAULT: 'rgba(255,255,255,.3)',
+          focus: '#b879ff'
+        },
 
         icon: hues['white'],
 

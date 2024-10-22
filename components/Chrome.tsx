@@ -1,11 +1,16 @@
+'use client'
+
+import { ReactNode, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
 import logo from '@/images/logo.svg'
 import NavLink from '@/components/NavLink'
 import { Button } from '@/components/Button'
-import { ReactNode } from 'react'
-import clsx from 'clsx'
+import { Modal } from '@/components/Modal'
+import { ContactForm } from '@/components/ContactForm'
 
 const Logo = ({ href, className }: { href: string; className?: string }) => (
   <Link href={href} className={className}>
@@ -40,11 +45,7 @@ const Nav = ({
   className?: string
 }) => (
   <nav
-    className={clsx(
-      'items-stretch gap-2 sm:hidden md:flex',
-      'lg:mr-2 lg:gap-5',
-      className
-    )}
+    className={clsx('hidden items-stretch gap-5 md:flex', className)}
     role="navigation"
   >
     {children}
@@ -100,22 +101,30 @@ const Chrome = ({
 }: {
   children: ReactNode | ReactNode[]
   className?: string
-}) => (
-  <>
-    <Header className={className}>
-      <div className="flex gap-4">
-        <Logo href="/#top" />
-        <Nav>
-          <NavItem href="/#about">About me</NavItem>
-          <NavItem href="/#work">Work history</NavItem>
-          <NavItem href="/#elsewhere">Elsewhere</NavItem>
-        </Nav>
-      </div>
-      <Button size="small">Get in touch</Button>
-    </Header>
-    {children}
-    <Footer />
-  </>
-)
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  return (
+    <>
+      <Header className={className}>
+        <div className="flex gap-4">
+          <Logo href="/#top" />
+          <Nav>
+            <NavItem href="/#about">About me</NavItem>
+            <NavItem href="/#work">Work history</NavItem>
+            <NavItem href="/#elsewhere">Elsewhere</NavItem>
+          </Nav>
+        </div>
+        <Button size="small" onClick={() => setIsModalOpen(true)}>
+          Get in touch
+        </Button>
+      </Header>
+      {children}
+      <Footer />
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ContactForm />
+      </Modal>
+    </>
+  )
+}
 
 export default Chrome

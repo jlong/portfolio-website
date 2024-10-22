@@ -2,10 +2,10 @@ import React, { ReactNode } from 'react'
 import clsx from 'clsx'
 
 const sizes = {
-  h1: 'text-5xl/tight font-bold',
-  h2: 'text-4xl/tight font-bold',
-  h3: 'text-2xl/tight font-bold',
-  h4: 'text-xl/tight font-bold'
+  h1: 'text-4xl/tight font-bold md:text-5xl/tight',
+  h2: 'text-3xl/tight font-bold md:text-4xl/tight',
+  h3: 'text-xl/tight font-bold md:text-2xl/tight',
+  h4: 'text-lg/tight font-bold md:text-xl/tight'
 }
 
 export const Heading = ({
@@ -15,8 +15,8 @@ export const Heading = ({
   children
 }: {
   as: 'h1' | 'h2' | 'h3' | 'h4'
-  styledAs: 'h1' | 'h2' | 'h3' | 'h4'
-  className: string
+  styledAs?: 'h1' | 'h2' | 'h3' | 'h4'
+  className?: string
   children: ReactNode | ReactNode[]
 }) => {
   const Component = as

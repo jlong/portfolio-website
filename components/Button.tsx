@@ -2,14 +2,13 @@ import React, { PropsWithChildren } from 'react'
 import { Spinner } from './Spinner'
 
 const styles = {
-  base: 'relative justify-center rounded-lg font-semibold border-2',
+  base: 'relative justify-center rounded-lg font-semibold outline-border-focus outline-1 outline-offset-2',
   kind: {
     primary:
-      'text-button-primary-text bg-button-primary-background hover:text-button-primary-hover-text hover:bg-button-primary-hover-background border-transparent',
+      'text-button-primary-text bg-button-primary-background hover:text-button-primary-hover-text hover:bg-button-primary-hover-background',
     secondary:
-      'text-button-secondary-text bg-button-secondary-background hover:text-button-secondary-hover-text hover:bg-button-secondary-hover-background border-transparent',
-    disabled:
-      'text-loud bg-slate-200 border-transparent opacity-50 cursor-not-allowed'
+      'text-button-secondary-text bg-button-secondary-background hover:text-button-secondary-hover-text hover:bg-button-secondary-hover-background',
+    disabled: 'text-loud bg-slate-200 opacity-50 cursor-not-allowed'
   },
   size: {
     small: 'px-3 py-1 text-lg',

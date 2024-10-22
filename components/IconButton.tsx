@@ -2,6 +2,7 @@ import Link, { LinkProps } from 'next/link'
 import Icon from '@/components/Icon'
 import { ButtonHTMLAttributes } from 'react'
 import { clsx } from 'clsx'
+import { getLinkProps } from '@/lib/utils/getLinkProps'
 
 type IconButtonProps = {
   uid: string
@@ -34,6 +35,7 @@ const IconButton = ({
     size === 'default' && 'w-4 h-4',
     'opacity-80 group-hover:opacity-100'
   )
+
   if (Component === 'button') {
     return (
       <button
@@ -46,8 +48,14 @@ const IconButton = ({
     )
   }
   if (Component === Link) {
+    const linkProps = getLinkProps((props as LinkProps).href as string)
     return (
-      <Link className={buttonClasses} title={tip} {...(props as LinkProps)}>
+      <Link
+        className={buttonClasses}
+        title={tip}
+        {...linkProps}
+        {...(props as LinkProps)}
+      >
         <Icon className={iconClasses} uid={uid} />
       </Link>
     )

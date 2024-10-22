@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
+import { getLinkProps } from '@/lib/utils/getLinkProps'
 
 const NavLink = ({
   className,
@@ -23,10 +24,12 @@ const NavLink = ({
 }) => {
   const pathname = usePathname()
   const matches = exact ? pathname == href : pathname.startsWith(href)
+  const linkProps = getLinkProps(href)
   return (
     <Link
       className={matches ? selectedClassName : className}
       href={href}
+      {...linkProps}
       {...props}
     >
       {children}

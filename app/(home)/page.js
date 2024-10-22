@@ -59,10 +59,14 @@ export default function Home() {
                 <strong className="text-bold">design</strong>.
               </p>
               <Actions>
-                <Button kind="primary" size="large">
+                <Button
+                  kind="primary"
+                  size="large"
+                  as={Link}
+                  href="https://www.linkedin.com/in/wiseheart"
+                >
                   Get in touch
                 </Button>
-                <Link href="/#contact">Get in touch</Link>
               </Actions>
             </Box>
             <Image
@@ -470,7 +474,7 @@ export default function Home() {
               <div className="mt-3 flex gap-2">
                 <IconButton
                   as={Link}
-                  href="https://linkedin.com/in/wiseheart"
+                  href="https://www.linkedin.com/in/wiseheart"
                   uid="linkedin"
                   tip="LinkedIn"
                 />
@@ -503,7 +507,24 @@ export default function Home() {
           </Columns>
         </Container>
       </Section>
-      <Divider />
+      <Section className="bg-depth-1">
+        <Container>
+          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
+            <Heading as="h2">
+              Have a role that’d be perfect&nbsp;for&nbsp;me?
+            </Heading>
+            <Button
+              kind="primary"
+              size="large"
+              as={Link}
+              href="https://www.linkedin.com/in/wiseheart"
+              className="shrink-0"
+            >
+              Get in touch
+            </Button>
+          </div>
+        </Container>
+      </Section>
     </>
   )
 }

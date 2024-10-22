@@ -1,5 +1,8 @@
 import React, { PropsWithChildren } from 'react'
 import { Spinner } from './Spinner'
+import Link from 'next/link'
+import { LinkProps } from 'next/link'
+import { getLinkProps } from '@/lib/utils/getLinkProps'
 
 const styles = {
   base: 'relative justify-center rounded-lg font-semibold outline-border-focus outline-1 outline-offset-2',
@@ -27,16 +30,20 @@ const spinnerStyles = {
   disabled: 'text-loud'
 }
 
-export type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+export type ButtonProps = {
+  as?: 'button' | typeof Link
   kind?: keyof typeof styles.kind
   size?: keyof typeof styles.size
   block?: boolean
   disabled?: boolean
   working?: boolean
   className?: string
-}
+  href?: string
+} & Omit<React.ComponentPropsWithoutRef<'button'>, 'as' | 'ref'> &
+  Omit<LinkProps, 'as' | 'passHref'>
 
 export const Button = ({
+  as = 'button',
   children,
   type = 'button',
   kind = 'secondary',
@@ -45,10 +52,14 @@ export const Button = ({
   disabled = false,
   working = false,
   className = '',
+  href,
   ...props
 }: PropsWithChildren<ButtonProps>) => {
+  const Component = as || 'button'
+  const linkProps = as === Link ? getLinkProps(href) : {}
+
   return (
-    <button
+    <Component
       className={`
         ${styles.base}
         ${disabled ? styles.kind['disabled'] : styles.kind[kind]}
@@ -57,7 +68,10 @@ export const Button = ({
         ${styles[working ? 'working' : 'notWorking']}
         ${className}
       `}
-      disabled={disabled || working}
+      {...(Component === 'button'
+        ? { type, disabled: disabled || working }
+        : { href })}
+      {...linkProps}
       {...props}
     >
       {working && (
@@ -69,6 +83,6 @@ export const Button = ({
         />
       )}
       {children}
-    </button>
+    </Component>
   )
 }

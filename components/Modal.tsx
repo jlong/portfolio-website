@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 export const Modal = ({
   isOpen,
-  onClose,
+  onClose = () => {},
   children
 }: {
   isOpen: boolean
@@ -36,7 +36,7 @@ export const Modal = ({
   }, [isOpen])
 
   const handleCancel = () => {
-    if (onClose) onClose()
+    onClose()
   }
 
   if (!mounted) return null
@@ -45,16 +45,15 @@ export const Modal = ({
     <dialog
       ref={modalRef}
       className={clsx(
-        'flex',
-        'flex-col',
-        'min-h-[200px] min-w-[300px]',
-        'rounded-2xl p-4',
-        'transition-all duration-500',
+        'flex min-h-[200px] min-w-[300px] flex-col',
+        'rounded-2xl p-4 transition-all duration-500',
         '-translate-y-10 opacity-0',
-        'open:translate-x-0 open:opacity-100',
+        'open:translate-y-0 open:opacity-100',
         'backdrop:bg-dark-depth-0/80 backdrop:backdrop-blur-sm',
-        'backdrop:opacity-0 backdrop:transition-opacity backdrop:duration-1000 open:backdrop:opacity-100 open:backdrop:backdrop-blur-lg'
+        'backdrop:opacity-0 backdrop:transition-opacity backdrop:duration-1000',
+        'open:backdrop:opacity-100 open:backdrop:backdrop-blur-lg'
       )}
+      aria-labelledby="modal-title"
       onCancel={handleCancel}
     >
       <IconButton
@@ -62,6 +61,7 @@ export const Modal = ({
         onClick={handleCancel}
         className="absolute right-3 top-3"
         size="small"
+        aria-label="Close"
       />
       {children}
     </dialog>

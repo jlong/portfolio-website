@@ -48,7 +48,7 @@ const IconButton = ({
     )
   }
   if (Component === Link) {
-    const linkProps = getLinkProps((props as LinkProps).href as string)
+    const linkProps = getLinkProps((props as LinkProps).href)
     return (
       <Link
         className={buttonClasses}

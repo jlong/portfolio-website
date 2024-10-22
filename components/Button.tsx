@@ -1,4 +1,5 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren, ButtonHTMLAttributes } from 'react'
+import clsx from 'clsx'
 import { Spinner } from './Spinner'
 import Link from 'next/link'
 import { LinkProps } from 'next/link'
@@ -30,59 +31,74 @@ const spinnerStyles = {
   disabled: 'text-loud'
 }
 
+type ButtonAsButtonProps = {
+  as?: 'button'
+} & ButtonHTMLAttributes<HTMLButtonElement>
+
+type ButtonAsLinkProps = {
+  as: typeof Link
+  href: string
+} & LinkProps
+
 export type ButtonProps = {
-  as?: 'button' | typeof Link
   kind?: keyof typeof styles.kind
   size?: keyof typeof styles.size
   block?: boolean
   disabled?: boolean
   working?: boolean
   className?: string
-  href?: string
-} & Omit<React.ComponentPropsWithoutRef<'button'>, 'as' | 'ref'> &
-  Omit<LinkProps, 'as' | 'passHref'>
+} & (ButtonAsButtonProps | ButtonAsLinkProps)
 
 export const Button = ({
   as = 'button',
   children,
-  type = 'button',
   kind = 'secondary',
   size = 'medium',
   block = false,
   disabled = false,
   working = false,
   className = '',
-  href,
   ...props
 }: PropsWithChildren<ButtonProps>) => {
-  const Component = as || 'button'
-  const linkProps = as === Link ? getLinkProps(href) : {}
-
-  return (
-    <Component
-      className={`
-        ${styles.base}
-        ${disabled ? styles.kind['disabled'] : styles.kind[kind]}
-        ${styles.size[size]}
-        ${styles[block ? 'block' : 'inline']}
-        ${styles[working ? 'working' : 'notWorking']}
-        ${className}
-      `}
-      {...(Component === 'button'
-        ? { type, disabled: disabled || working }
-        : { href })}
-      {...linkProps}
-      {...props}
-    >
-      {working && (
-        <Spinner
-          className={`
-            absolute
-            ${disabled ? spinnerStyles['disabled'] : spinnerStyles[kind]}
-          `}
-        />
-      )}
-      {children}
-    </Component>
+  const commonClassName = clsx(
+    styles.base,
+    disabled ? styles.kind['disabled'] : styles.kind[kind],
+    styles.size[size],
+    styles[block ? 'block' : 'inline'],
+    styles[working ? 'working' : 'notWorking'],
+    className
   )
+
+  const spinner = working && (
+    <Spinner
+      className={clsx('absolute', spinnerStyles[disabled ? 'disabled' : kind])}
+    />
+  )
+
+  if (as === Link) {
+    const { href, ...linkProps } = props as ButtonAsLinkProps
+    const additionalLinkProps = getLinkProps(href)
+    return (
+      <Link
+        href={href}
+        className={commonClassName}
+        {...linkProps}
+        {...additionalLinkProps}
+      >
+        {spinner}
+        {children}
+      </Link>
+    )
+  } else {
+    return (
+      <button
+        className={commonClassName}
+        disabled={disabled || working}
+        {...(props as ButtonAsButtonProps)}
+      >
+        {spinner}
+        {children}
+      </button>
+    )
+  }
 }

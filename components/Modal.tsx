@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 export const Modal = ({
   isOpen,
-  onClose = () => {},
+  onClose,
   children
 }: {
   isOpen: boolean
@@ -36,7 +36,7 @@ export const Modal = ({
   }, [isOpen])
 
   const handleCancel = () => {
-    onClose()
+    onClose && onClose()
   }
 
   if (!mounted) return null

@@ -470,7 +470,7 @@ export default function Home() {
                 quickly became the Design Manager. I worked on{' '}
                 <Link href="https://www.cloudbees.com/jenkins">
                   CloudBees Jenkins
-                </Link>
+                </Link>{' '}
                 and{' '}
                 <Link href="https://www.cloudbees.com/newsroom/cloudbees-launches-cloudbees-devoptics-delivering-unparalleled-devops-team-insights-and">
                   DevOptics

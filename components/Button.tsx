@@ -15,9 +15,9 @@ const styles = {
     disabled: 'text-loud bg-slate-200 opacity-50 cursor-not-allowed'
   },
   size: {
-    small: 'px-3 py-1 text-lg',
-    medium: 'px-2 py-1 text-lg',
-    large: 'px-4 py-1.5 text-xl'
+    small: 'px-1.5 py-1 md:text-lg md:px-2 md:py-0.75',
+    default: 'px-2 py-1.25 md:text-lg md:px-3 md:py-1',
+    large: 'px-3 py-1.25 text-lg md:text-xl md:px-4 md:py-1.5'
   },
   block: 'flex w-full',
   inline: 'inline-flex',
@@ -53,7 +53,7 @@ export const Button = ({
   as = 'button',
   children,
   kind = 'secondary',
-  size = 'medium',
+  size = 'default',
   block = false,
   disabled = false,
   working = false,

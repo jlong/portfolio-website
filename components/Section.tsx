@@ -17,17 +17,17 @@ const paddingXClass = {
 }
 
 const paddingYClass = {
-  0: 'py-0',
-  1: 'py-1',
-  2: 'py-2',
-  3: 'py-3',
-  4: 'py-4',
-  5: 'py-5',
-  6: 'py-6',
-  7: 'py-7',
-  8: 'py-8',
-  9: 'py-9',
-  10: 'py-10'
+  0: 'md:py-0',
+  1: 'md:py-1',
+  2: 'md:py-2',
+  3: 'md:py-3',
+  4: 'md:py-4',
+  5: 'md:py-5',
+  6: 'md:py-6',
+  7: 'md:py-7',
+  8: 'md:py-8',
+  9: 'md:py-9',
+  10: 'md:py-10'
 }
 
 export const Section = ({
@@ -52,6 +52,7 @@ export const Section = ({
         'gap-8',
         paddingXClass[paddingX],
         paddingYClass[paddingY],
+        'py-4',
         className
       )}
     >

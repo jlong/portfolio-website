@@ -53,7 +53,7 @@ export default function Home() {
                 leader with 20+ years experience building web apps &amp; leading
                 software teams.
               </Heading>
-              <p className="text-2xl/tight text-default md:text-3xl/tight">
+              <p className="text-xl/tight text-default md:text-3xl/tight">
                 Currently seeking a leadership role where I can collaborate on{' '}
                 <strong className="text-bold">product</strong> and{' '}
                 <strong className="text-bold">design</strong>.
@@ -81,12 +81,48 @@ export default function Home() {
       </Section>
       <Section paddingY="8" paddingX={0}>
         <AutoScroller gap="10" direction="right">
-          <Image alt="ElasticPath" src={elasticpath} width={179} height={42} />
-          <Image alt="Unstack" src={unstack} width={191} height={28} />
-          <Image alt="Launchable" src={launchable} width={213} height={44} />
-          <Image alt="Teamworks" src={teamworks} width={213} height={52} />
-          <Image alt="CloudBees" src={cloudbees} width={201} height={32} />
-          <Image alt="UserVoice" src={uservoice} width={206} height={28} />
+          <Image
+            alt="ElasticPath"
+            src={elasticpath}
+            width={179}
+            height={42}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
+          <Image
+            alt="Unstack"
+            src={unstack}
+            width={191}
+            height={28}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
+          <Image
+            alt="Launchable"
+            src={launchable}
+            width={213}
+            height={44}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
+          <Image
+            alt="Teamworks"
+            src={teamworks}
+            width={213}
+            height={52}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
+          <Image
+            alt="CloudBees"
+            src={cloudbees}
+            width={201}
+            height={32}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
+          <Image
+            alt="UserVoice"
+            src={uservoice}
+            width={206}
+            height={28}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
         </AutoScroller>
       </Section>
       <Divider />
@@ -96,12 +132,12 @@ export default function Home() {
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">About me</Heading>
             <div className="prose">
-              <p className="text-2xl">
+              <p className="text-lg md:text-2xl">
                 In past roles, I’ve been a <strong>Product Manger</strong>,{' '}
                 <strong>Product Designer</strong>, and{' '}
                 <strong>Frontend Engineer</strong>.
               </p>
-              <p className="text-xl/8">
+              <p className="text-base/7 md:text-xl/8">
                 My approach to product is grounded in action, prioritizing
                 business objectives based on real customer insights. I believe
                 in quickly testing ideas in production and iterating based on
@@ -112,7 +148,7 @@ export default function Home() {
                 —solving real business problems in a way that creates passionate
                 users.
               </p>
-              <p className="text-xl/8">
+              <p className="text-base/7 md:text-xl/8">
                 Collaboration, coaching, and managing by influence are the
                 primary tools I use to lead teams. In the spirit of{' '}
                 <Link href="https://agilemanifesto.org/principles.html">
@@ -280,7 +316,7 @@ export default function Home() {
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Work history</Heading>
             <div className="prose">
-              <p className="text-xl/8">
+              <p className="text-base/7 md:text-xl/8">
                 I’ve worked with SaaS businesses on{' '}
                 <strong>Storefront &amp; Website Builders</strong> (Elastic Path
                 Studio), <strong>User Feedback Tools</strong> (UserVoice),{' '}
@@ -294,10 +330,14 @@ export default function Home() {
         </Container>
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
-            <Heading as="h3" styledAs="h4">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
               Mar 2023 &ndash; Oct 2024
             </Heading>
-            <div className="prose">
+            <div className="prose prose-sm">
               <Heading as="h4" styledAs="h3">
                 Director, Product at Elastic Path
               </Heading>
@@ -324,10 +364,14 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3" styledAs="h4">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
               Apr 2021 &ndash; Mar 2023
             </Heading>
-            <div className="prose">
+            <div className="prose prose-sm">
               <Heading as="h4" styledAs="h3">
                 Director of Product &amp; Design at Unstack
               </Heading>
@@ -353,10 +397,14 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3" styledAs="h4">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
               Feb 2020 &ndash; Apr 2021
             </Heading>
-            <div className="prose">
+            <div className="prose prose-sm">
               <Heading as="h4" styledAs="h3">
                 Principle Product Designer &amp; Co-founder at Launchable
               </Heading>
@@ -379,10 +427,14 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3" styledAs="h4">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
               Nov 2018 &ndash; Feb 2020
             </Heading>
-            <div className="prose">
+            <div className="prose prose-sm">
               <Heading as="h4" styledAs="h3">
                 Director Product Design at Teamworks
               </Heading>
@@ -401,10 +453,14 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3" styledAs="h4">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
               Oct 2016 &ndash; Oct 2018
             </Heading>
-            <div className="prose">
+            <div className="prose prose-sm">
               <Heading as="h4" styledAs="h3">
                 Design Manager at CloudBees
               </Heading>
@@ -427,10 +483,14 @@ export default function Home() {
               </p>
             </div>
 
-            <Heading as="h3" styledAs="h4">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
               Aug 2011 &ndash; Sep 2016
             </Heading>
-            <div className="prose">
+            <div className="prose prose-sm">
               <Heading as="h4" styledAs="h3">
                 UX Designer at UserVoice
               </Heading>

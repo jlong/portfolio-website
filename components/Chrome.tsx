@@ -9,7 +9,13 @@ import { Button } from '@/components/Button'
 
 const Logo = ({ href, className }: { href: string; className?: string }) => (
   <Link href={href} className={className}>
-    <Image src={logo} width={48} height={48} alt="John W. Long" />
+    <Image
+      src={logo}
+      width={48}
+      height={48}
+      alt="John W. Long"
+      className="size-5 md:size-6"
+    />
   </Link>
 )
 
@@ -24,7 +30,7 @@ const Header = ({
     className={clsx(
       'sticky top-0 z-50',
       'flex w-full items-center justify-between gap-2',
-      'border-b border-border bg-white/70 p-2 backdrop-blur-lg',
+      'border-b border-border bg-white/70 p-1.5 backdrop-blur-lg md:p-2',
       className
     )}
   >
@@ -84,8 +90,9 @@ const Footer = ({ className }: { className?: string }) => (
       className
     )}
   >
-    <Container className="text-center text-default">
-      Made with ❤️ in North Carolina. Copyright &copy; John W. Long.
+    <Container className="text-center text-sm md:text-default">
+      Made with ❤️ in North Carolina.{' '}
+      <span className="hidden md:inline">Copyright</span> &copy; John W. Long.
     </Container>
   </footer>
 )

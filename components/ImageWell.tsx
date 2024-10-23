@@ -26,7 +26,7 @@ export const ImageWell = ({
         'relative',
         'flex items-center justify-center',
         'shrink-0',
-        'h-[198px] w-[316px]',
+        'h-[148px] w-[236px] md:h-[198px] md:w-[316px]',
         'rounded-2xl border border-border bg-depth-1',
         'overflow-clip',
         className
@@ -35,7 +35,8 @@ export const ImageWell = ({
       <span
         className={clsx(
           'flex items-center justify-center',
-          zoom && 'transition-transform duration-300 group-hover:scale-110'
+          zoom &&
+            'scale-75 transition-transform duration-300 group-hover:scale-90 md:scale-100 md:group-hover:scale-110'
         )}
       >
         {children}
@@ -47,8 +48,8 @@ export const ImageWell = ({
             'flex',
             'px-6',
             'transition-all duration-500',
-            'opacity-0 scale-125  group-hover:scale-100 group-hover:opacity-100',
-            'bg-pink whitespace-nowrap text-white'
+            'scale-125 opacity-0  group-hover:scale-100 group-hover:opacity-100',
+            'whitespace-nowrap bg-pink text-white'
           )}
         >
           {ribbon}

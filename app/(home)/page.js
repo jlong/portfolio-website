@@ -441,7 +441,7 @@ export default function Home() {
               </Heading>
               <p>
                 Joined as the lead designer and coordinated work for several
-                teams (20+ developers). During my tenor we launched{' '}
+                teams (20+ developers). During my tenure we launched{' '}
                 <Link href="https://www.figma.com/exit?url=https://teamworks.com/academics/">
                   Teamworks Academics
                 </Link>

@@ -337,7 +337,7 @@ export default function Home() {
             >
               Mar 2023 &ndash; Oct 2024
             </Heading>
-            <div className="prose prose-sm">
+            <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
                 Director, Product at Elastic Path
               </Heading>
@@ -371,7 +371,7 @@ export default function Home() {
             >
               Apr 2021 &ndash; Mar 2023
             </Heading>
-            <div className="prose prose-sm">
+            <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
                 Director of Product &amp; Design at Unstack
               </Heading>
@@ -380,9 +380,10 @@ export default function Home() {
                 <Link href="https://medium.com/@johnwlong/why-we-chose-unstack-over-wordpress-and-havent-looked-back-f0dae6384cd">
                   Unstack at Launchable
                 </Link>{' '}
-                for the website, I feel in love with the product and had to
-                submit my application. To my great delight I was hired direct
-                product and design.
+                for the website, I fell in love with the product, saw they had
+                an opening for Head of Product, and just had to submit my
+                application. To my great delight I was hired to direct product
+                and design.
               </p>
               <p>
                 At Unstack, I oversaw the creation of a{' '}
@@ -404,7 +405,7 @@ export default function Home() {
             >
               Feb 2020 &ndash; Apr 2021
             </Heading>
-            <div className="prose prose-sm">
+            <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
                 Principle Product Designer &amp; Co-founder at Launchable
               </Heading>
@@ -434,7 +435,7 @@ export default function Home() {
             >
               Nov 2018 &ndash; Feb 2020
             </Heading>
-            <div className="prose prose-sm">
+            <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
                 Director Product Design at Teamworks
               </Heading>
@@ -460,7 +461,7 @@ export default function Home() {
             >
               Oct 2016 &ndash; Oct 2018
             </Heading>
-            <div className="prose prose-sm">
+            <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
                 Design Manager at CloudBees
               </Heading>
@@ -490,7 +491,7 @@ export default function Home() {
             >
               Aug 2011 &ndash; Sep 2016
             </Heading>
-            <div className="prose prose-sm">
+            <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
                 UX Designer at UserVoice
               </Heading>

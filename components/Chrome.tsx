@@ -90,7 +90,7 @@ const Footer = ({ className }: { className?: string }) => (
       className
     )}
   >
-    <Container className="text-center text-sm md:text-default">
+    <Container className="text-center text-sm md:text-base">
       Made with ❤️ in North Carolina.{' '}
       <span className="hidden md:inline">Copyright</span> &copy; John W. Long.
     </Container>

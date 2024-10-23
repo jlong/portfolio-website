@@ -146,9 +146,9 @@ export const AutoScroller = ({
     }
   }, [children, gap, duplicateCount])
 
-  const handleMouseEnter = () => setIsPaused(true)
+  const handlePause = () => setIsPaused(true)
 
-  const handleMouseLeave = () => {
+  const handleResume = () => {
     setIsPaused(false)
     lastTimestamp.current = null // Reset timestamp to prevent snapping
     accumulatedOffset.current = 0 // Reset accumulated offset to prevent jumps
@@ -174,9 +174,11 @@ export const AutoScroller = ({
         className
       )}
       ref={containerRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handlePause}
+      onMouseLeave={handleResume}
       onWheel={handleWheelScroll}
+      onTouchStart={handlePause}
+      onTouchEnd={handleResume}
     >
       {/* Render the original content */}
       {children}

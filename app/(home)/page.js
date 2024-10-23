@@ -54,9 +54,9 @@ export default function Home() {
                 software teams.
               </Heading>
               <p className="text-xl/tight text-default md:text-3xl/tight">
-                Currently seeking a leadership role where I can collaborate on{' '}
-                <strong className="text-bold">product</strong> and{' '}
-                <strong className="text-bold">design</strong>.
+                Currently seeking a blended leadership role where I can
+                collaborate on <strong className="text-bold">product</strong>{' '}
+                and <strong className="text-bold">design</strong>.
               </p>
               <Actions>
                 <Button

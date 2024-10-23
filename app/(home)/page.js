@@ -133,7 +133,7 @@ export default function Home() {
             <Heading as="h2">About me</Heading>
             <div className="prose">
               <p className="text-lg md:text-2xl">
-                In past roles, I’ve been a <strong>Product Manger</strong>,{' '}
+                In past roles, I’ve been a <strong>Product Manager</strong>,{' '}
                 <strong>Product Designer</strong>, and{' '}
                 <strong>Frontend Engineer</strong>.
               </p>

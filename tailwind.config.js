@@ -45,6 +45,7 @@ module.exports = {
 
       border: {
         DEFAULT: 'rgba(19,20,24,.15)',
+        light: 'rgba(19,20,24,.05)',
         focus: '#7945e5'
       },
 
@@ -168,8 +169,8 @@ module.exports = {
     },
 
     gridTemplateColumns: {
-      '3-1': '40fr 13fr',
-      '1-3': '13fr 40fr'
+      '3-1': '3fr 1fr',
+      '1-3': '1fr 3fr'
     },
 
     extend: {

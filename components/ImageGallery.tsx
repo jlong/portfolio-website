@@ -148,7 +148,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 <Image
                   src={images[selectedImageIndex].src}
                   alt="Current Image"
-                  className="max-h-full w-auto rounded-xl shadow-2xl ring-1 ring-black/10"
+                  className="max-h-full w-auto rounded-xl drop-shadow-2xl"
                 />
               </motion.div>
             </AnimatePresence>

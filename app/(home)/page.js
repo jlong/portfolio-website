@@ -66,7 +66,7 @@ import teamworksCourses from '@/images/gallery/teamworks-courses.png'
 import teamworksTutoring from '@/images/gallery/teamworks-tutoring.png'
 import teamworksBookingSlots from '@/images/gallery/teamworks-booking-slots.png'
 import teamworksAddAppointment from '@/images/gallery/teamworks-add-appointment.png'
-import teamworksActivityFeed from '@/images/gallery/teamworks-acivity-feed.png'
+import teamworksActivityFeed from '@/images/gallery/teamworks-activity-feed.png'
 
 export default function Home() {
   return (

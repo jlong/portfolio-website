@@ -18,13 +18,26 @@ import {
   PersonName,
   PersonTitle
 } from '@/components/Person'
+import { ImageGallery } from '@/components/ImageGallery'
+import { ButtonScroller } from '@/components/ButtonScroller'
+import { ZestIconsLogo } from '@/components/Images/ZestIconsLogo'
+import { RadiantCMSLogo } from '@/components/Images/RadiantCMSLogo'
+import { TaskpageLogo } from '@/components/Images/TaskpageLogo'
+import IconButton from '@/components/IconButton'
+import { ImageWell } from '@/components/ImageWell'
+
+/* Images */
 import portrait from '@/images/john-portrait.svg'
+
+/* Logos */
 import uservoice from '@/images/logos/uservoice.svg'
 import cloudbees from '@/images/logos/cloudbees.svg'
 import teamworks from '@/images/logos/teamworks.svg'
 import launchable from '@/images/logos/launchable.svg'
 import elasticpath from '@/images/logos/elasticpath.svg'
 import unstack from '@/images/logos/unstack.svg'
+
+/* Avatars */
 import thughes from '@/images/avatars/tim-hughes.jpg'
 import dmorley from '@/images/avatars/dan-morley.jpg'
 import kmalhi from '@/images/avatars/karan-malhi.jpg'
@@ -33,13 +46,27 @@ import gdeken from '@/images/avatars/grant-deken.jpg'
 import rwhite from '@/images/avatars/richard-white.jpg'
 import jdumay from '@/images/avatars/james-dumay.jpg'
 import smoseley from '@/images/avatars/steven-moseley.jpg'
-import { ButtonScroller } from '@/components/ButtonScroller'
-import { ZestIconsLogo } from '@/components/Images/ZestIconsLogo'
-import { RadiantCMSLogo } from '@/components/Images/RadiantCMSLogo'
-import { TaskpageLogo } from '@/components/Images/TaskpageLogo'
-import IconButton from '@/components/IconButton'
-import { ImageWell } from '@/components/ImageWell'
-import { Modal } from '@/components/Modal'
+
+/* Gallery */
+import elasticPathProductGrid from '@/images/gallery/elastic-path-product-grid.png'
+import elasticPathMasterDetailView from '@/images/gallery/elastic-path-master-detail-view.png'
+import elasticPathProductEditor from '@/images/gallery/elastic-path-product-editor.png'
+import elasticPathStudioSnippets from '@/images/gallery/elastic-path-studio-snippets.png'
+import elasticPathStudioSnippetEditor from '@/images/gallery/elastic-path-studio-snippet-editor.png'
+import elasticPathStudioStyleGuide from '@/images/gallery/elastic-path-studio-styleguide.png'
+import unstackQuickstart from '@/images/gallery/unstack-quickstart.png'
+import unstackShopifyStartScreen from '@/images/gallery/unstack-shopify-start-screen.png'
+import launchableHomePage from '@/images/gallery/launchable-home-page.png'
+import launchableLogin from '@/images/gallery/launchable-login.png'
+import launchableRecentRuns from '@/images/gallery/launchable-recent-runs.png'
+import launchableModelStatus from '@/images/gallery/launchable-model-status.png'
+import teamworksStudents from '@/images/gallery/teamworks-students.png'
+import teamworksStudentDetails from '@/images/gallery/teamworks-student-details.png'
+import teamworksCourses from '@/images/gallery/teamworks-courses.png'
+import teamworksTutoring from '@/images/gallery/teamworks-tutoring.png'
+import teamworksBookingSlots from '@/images/gallery/teamworks-booking-slots.png'
+import teamworksAddAppointment from '@/images/gallery/teamworks-add-appointment.png'
+import teamworksActivityFeed from '@/images/gallery/teamworks-acivity-feed.png'
 
 export default function Home() {
   return (
@@ -328,6 +355,56 @@ export default function Home() {
             </div>
           </Columns>
         </Container>
+        <div className="-mx-2 -mt-2 flex gap-4 overflow-x-auto px-2 md:pl-[calc(50vw-565px+(1130px/4)+32px)]">
+          <ImageGallery
+            images={[
+              { src: elasticPathProductGrid, alt: 'Elastic Path Product Grid' },
+              {
+                src: elasticPathMasterDetailView,
+                alt: 'Elastic Path Master Detail View'
+              },
+              {
+                src: elasticPathProductEditor,
+                alt: 'Elastic Path Product Editor'
+              },
+              {
+                src: elasticPathStudioSnippets,
+                alt: 'Elastic Path Studio Snippets'
+              },
+              {
+                src: elasticPathStudioSnippetEditor,
+                alt: 'Elastic Path Snippet Editor'
+              },
+              {
+                src: elasticPathStudioStyleGuide,
+                alt: 'Elastic Path Studio Style Guide'
+              },
+              { src: unstackQuickstart, alt: 'Elastic Path Quickstart' },
+              {
+                src: unstackShopifyStartScreen,
+                alt: 'Elastic Path Shopify Start Screen'
+              },
+
+              { src: launchableHomePage, alt: 'Launchable Home Page' },
+              { src: launchableLogin, alt: 'Launchable Login' },
+              { src: launchableRecentRuns, alt: 'Launchable Recent Runs' },
+              { src: launchableModelStatus, alt: 'Launchable Model Status' },
+              { src: teamworksStudents, alt: 'Teamworks Students' },
+              {
+                src: teamworksStudentDetails,
+                alt: 'Teamworks Student Details'
+              },
+              { src: teamworksCourses, alt: 'Teamworks Courses' },
+              { src: teamworksTutoring, alt: 'Teamworks Tutoring' },
+              { src: teamworksBookingSlots, alt: 'Teamworks Booking Slots' },
+              {
+                src: teamworksAddAppointment,
+                alt: 'Teamworks Add Appointment'
+              },
+              { src: teamworksActivityFeed, alt: 'Teamworks Activity Feed' }
+            ]}
+          />
+        </div>
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading

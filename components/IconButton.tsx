@@ -25,8 +25,9 @@ const IconButton = ({
   const buttonClasses = clsx(
     'group',
     'flex flex-none items-center justify-center',
-    size === 'small' && 'w-4 h-4 rounded-lg hover:bg-depth-1',
-    size === 'default' && 'w-7 h-7 rounded-2xl bg-depth-1 hover:bg-depth-2',
+    size === 'small' && 'w-4 h-4 rounded-full hover:bg-depth-1',
+    size === 'default' &&
+      'w-7 h-7 rounded-full bg-depth-1 hover:bg-depth-2 backdrop-blur-2xl',
     className
   )
   const iconClasses = clsx(

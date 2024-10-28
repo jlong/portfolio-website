@@ -51,6 +51,7 @@ import smoseley from '@/images/avatars/steven-moseley.jpg'
 import elasticPathProductGrid from '@/images/gallery/elastic-path-product-grid.png'
 import elasticPathMasterDetailView from '@/images/gallery/elastic-path-master-detail-view.png'
 import elasticPathProductEditor from '@/images/gallery/elastic-path-product-editor.png'
+import elasticPathIcons from '@/images/gallery/elastic-path-icons.png'
 import elasticPathStudioSnippets from '@/images/gallery/elastic-path-studio-snippets.png'
 import elasticPathStudioSnippetEditor from '@/images/gallery/elastic-path-studio-snippet-editor.png'
 import elasticPathStudioStyleGuide from '@/images/gallery/elastic-path-studio-styleguide.png'
@@ -60,6 +61,8 @@ import launchableHomePage from '@/images/gallery/launchable-home-page.png'
 import launchableLogin from '@/images/gallery/launchable-login.png'
 import launchableRecentRuns from '@/images/gallery/launchable-recent-runs.png'
 import launchableModelStatus from '@/images/gallery/launchable-model-status.png'
+import launchableIcons from '@/images/gallery/launchable-icons.png'
+import launchableTestShift from '@/images/gallery/launchable-test-shift.png'
 import teamworksStudents from '@/images/gallery/teamworks-students.png'
 import teamworksStudentDetails from '@/images/gallery/teamworks-student-details.png'
 import teamworksCourses from '@/images/gallery/teamworks-courses.png'
@@ -368,6 +371,10 @@ export default function Home() {
                 alt: 'Elastic Path Product Editor'
               },
               {
+                src: elasticPathIcons,
+                alt: 'Elastic Path Icons'
+              },
+              {
                 src: elasticPathStudioSnippets,
                 alt: 'Elastic Path Studio Snippets'
               },
@@ -389,6 +396,8 @@ export default function Home() {
               { src: launchableLogin, alt: 'Launchable Login' },
               { src: launchableRecentRuns, alt: 'Launchable Recent Runs' },
               { src: launchableModelStatus, alt: 'Launchable Model Status' },
+              { src: launchableIcons, alt: 'Launchable Icons' },
+              { src: launchableTestShift, alt: 'Launchable Test Shift' },
               { src: teamworksStudents, alt: 'Teamworks Students' },
               {
                 src: teamworksStudentDetails,

@@ -343,10 +343,10 @@ export default function Home() {
         <div className="-mx-2 -mt-2 flex gap-4 overflow-x-auto px-2 md:pl-[calc(50vw-565px+(1130px/4)+32px)]">
           <ImageGallery
             images={[
-              { src: launchableHomePage, alt: '' },
-              { src: launchableLogin, alt: '' },
-              { src: launchableRecentRuns, alt: '' },
-              { src: launchableModelStatus, alt: '' }
+              { src: launchableHomePage, alt: 'Launchable Home Page' },
+              { src: launchableLogin, alt: 'Launchable Login' },
+              { src: launchableRecentRuns, alt: 'Launchable Recent Runs' },
+              { src: launchableModelStatus, alt: 'Launchable Model Status' }
             ]}
           />
         </div>

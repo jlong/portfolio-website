@@ -20,6 +20,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     'left' | 'right'
   >('right')
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isLayoutIdEnabled, setIsLayoutIdEnabled] = useState(true)
 
   useEffect(() => {
     return () => {
@@ -38,32 +39,40 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   const openPreview = (index: number) => {
     setSelectedImageIndex(index)
     setIsPreviewOpen(true)
+    setIsLayoutIdEnabled(true) // Enable layoutId for initial open transition
   }
 
   const closePreview = () => {
-    setSelectedImageIndex(null)
-    setIsPreviewOpen(false)
+    setIsLayoutIdEnabled(true) // Enable layoutId for initial close transition
+    setIsTransitioning(true)
+    requestAnimationFrame(() => {
+      setSelectedImageIndex(null)
+      setIsPreviewOpen(false)
+      setIsTransitioning(false)
+    }) // Delay to ensure close animation completes without clipping
   }
 
   const showNextImage = () => {
-    if (selectedImageIndex !== null && !isTransitioning) {
+    if (selectedImageIndex !== null) {
       setTransitionDirection('right')
       setIsTransitioning(true)
-      setTimeout(() => {
+      setIsLayoutIdEnabled(false) // Disable layoutId for left/right transitions
+      requestAnimationFrame(() => {
         setSelectedImageIndex((selectedImageIndex + 1) % images.length)
-      }, 0)
+      })
     }
   }
 
   const showPreviousImage = () => {
-    if (selectedImageIndex !== null && !isTransitioning) {
+    if (selectedImageIndex !== null) {
       setTransitionDirection('left')
       setIsTransitioning(true)
-      setTimeout(() => {
+      setIsLayoutIdEnabled(false) // Disable layoutId for left/right transitions
+      requestAnimationFrame(() => {
         setSelectedImageIndex(
           (selectedImageIndex - 1 + images.length) % images.length
         )
-      }, 0)
+      })
     }
   }
 
@@ -75,13 +84,14 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     <>
       <ButtonScroller>
         {images.map((image, index) => (
-          <div
+          <motion.div
             key={index}
+            layoutId={isLayoutIdEnabled ? `image-${index}` : undefined} // Set layoutId only when enabled
             className={clsx(
               'group',
               'h-[300px] w-[400px]',
               'shrink-0',
-              'border-border-light cursor-pointer overflow-hidden rounded-2xl border bg-depth-2'
+              'cursor-zoom-in overflow-hidden rounded-xl border border-black/10'
             )}
           >
             <Image
@@ -90,20 +100,27 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               className={clsx(
                 'h-[300px] w-[400px]',
                 'object-cover object-top',
-                'transform transition-all group-hover:scale-105 group-hover:opacity-50'
+                'transform transition-all group-hover:scale-105'
               )}
               width={400}
               onClick={() => openPreview(index)}
             />
-          </div>
+          </motion.div>
         ))}
       </ButtonScroller>
 
       {selectedImageIndex !== null && (
-        <div
-          className={clsx('fixed inset-0 z-50', 'bg-white/40 backdrop-blur-xl')}
-        >
-          <div className={clsx('relative h-full w-full', 'overflow-hidden')}>
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ type: 'tween', duration: 0.2 }}
+            className={clsx(
+              'fixed inset-0 z-50',
+              'bg-white/40 backdrop-blur-xl'
+            )}
+          >
             <AnimatePresence
               initial={false}
               custom={transitionDirection}
@@ -111,6 +128,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             >
               <motion.div
                 key={selectedImageIndex}
+                layoutId={
+                  isLayoutIdEnabled ? `image-${selectedImageIndex}` : undefined
+                } // Set layoutId only when enabled
                 custom={transitionDirection}
                 initial={{
                   x: transitionDirection === 'right' ? '60%' : '-60%',
@@ -122,35 +142,50 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                   opacity: 0
                 }}
                 transition={{ type: 'spring', duration: 0.6 }}
-                className="absolute flex h-full w-full items-center justify-center p-4"
+                className="absolute flex h-full w-full cursor-zoom-out items-center justify-center p-4"
+                onClick={closePreview}
               >
                 <Image
                   src={images[selectedImageIndex].src}
                   alt="Current Image"
-                  className="max-h-full w-auto shadow-2xl ring-1 ring-black/10"
+                  className="max-h-full w-auto rounded-xl shadow-2xl ring-1 ring-black/10"
                 />
               </motion.div>
             </AnimatePresence>
-          </div>
-          <IconButton
-            uid="x"
-            onClick={closePreview}
-            className="absolute right-2 top-2"
-            aria-label="Close"
-          />
-          <IconButton
-            uid="left-arrow"
-            onClick={showPreviousImage}
-            className="absolute left-2 top-1/2 -translate-y-1/2 transform"
-            aria-label="Previous Image"
-          />
-          <IconButton
-            uid="right-arrow"
-            onClick={showNextImage}
-            className="absolute right-2 top-1/2 -translate-y-1/2 transform"
-            aria-label="Next Image"
-          />
-        </div>
+            <IconButton
+              uid="x"
+              onClick={closePreview}
+              className="absolute right-2 top-2"
+              aria-label="Close"
+            />
+            <motion.div
+              className="absolute left-2 top-1/2 -translate-y-1/2 transform"
+              initial={{ x: '-40px', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: '-40px', opacity: 0 }}
+              transition={{ type: 'spring', duration: 0.8, delay: 0.4 }}
+            >
+              <IconButton
+                uid="left-chevron"
+                onClick={showPreviousImage}
+                aria-label="Previous Image"
+              />
+            </motion.div>
+            <motion.div
+              className="absolute right-2 top-1/2 -translate-y-1/2 transform"
+              initial={{ x: '40px', opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: '40px', opacity: 0 }}
+              transition={{ type: 'spring', duration: 0.8, delay: 0.4 }}
+            >
+              <IconButton
+                uid="right-chevron"
+                onClick={showNextImage}
+                aria-label="Next Image"
+              />
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
       )}
     </>
   )

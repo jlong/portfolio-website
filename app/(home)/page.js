@@ -493,7 +493,7 @@ export default function Home() {
             </Heading>
             <div className="prose prose-sm md:prose-base">
               <Heading as="h4" styledAs="h3">
-                Principle Product Designer &amp; Co-founder at Launchable
+                Principal Product Designer &amp; Co-founder at Launchable
               </Heading>
               <p>
                 Joined up with two of{' '}

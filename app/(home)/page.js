@@ -442,7 +442,7 @@ export default function Home() {
                 Marketing to launch multiple landing pages and a revamped
                 developer site. During this time we saw a{' '}
                 <strong>6x improvement</strong> converting website visitors to
-                signups.
+                free trial signups.
               </p>
               <p>
                 I also collaborated with the design team on a design system to

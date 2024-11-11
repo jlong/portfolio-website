@@ -22,6 +22,8 @@ module.exports = {
     }
   ],
 
+  darkMode: 'selector',
+
   theme: {
     colors: {
       ...hues,

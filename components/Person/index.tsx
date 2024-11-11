@@ -29,7 +29,16 @@ export const PersonName = ({
   children: ReactNode | ReactNode[]
 }) => {
   return (
-    <div className={clsx('flex', 'font-semibold', className)}>{children}</div>
+    <div
+      className={clsx(
+        'flex',
+        'font-semibold',
+        'text-bold dark:text-dark-bold',
+        className
+      )}
+    >
+      {children}
+    </div>
   )
 }
 
@@ -41,7 +50,14 @@ export const PersonTitle = ({
   children: ReactNode | ReactNode[]
 }) => {
   return (
-    <div className={clsx('flex', 'text-subtle', 'text-sm', className)}>
+    <div
+      className={clsx(
+        'flex',
+        'text-subtle dark:text-dark-subtle',
+        'text-sm',
+        className
+      )}
+    >
       {children}
     </div>
   )

@@ -11,12 +11,9 @@ export const Card = ({
   return (
     <div
       className={clsx(
-        'flex',
-        'flex-col',
-        'gap-2',
-        'bg-depth-1',
-        'border',
-        'border-border',
+        'flex flex-col gap-2',
+        'bg-depth-1 dark:bg-dark-depth-1',
+        'border border-border dark:border-transparent',
         'rounded-2xl',
         'p-3',
         'min-w-[340px]',

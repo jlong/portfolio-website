@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Background } from '@/components/Images/Background'
 import { Section } from '@/components/Section'
 import { Container } from '@/components/Container'
 import { Box } from '@/components/Box'
@@ -74,6 +75,7 @@ import teamworksActivityFeed from '@/images/gallery/teamworks-activity-feed.png'
 export default function Home() {
   return (
     <>
+      <Background />
       <Section>
         <Container>
           <Columns layout={{ md: '3-1' }} gap="5">
@@ -83,10 +85,17 @@ export default function Home() {
                 leader with 20+ years experience building web apps &amp; leading
                 software teams.
               </Heading>
-              <p className="text-xl/tight text-default md:text-3xl/tight">
+              <p className="text-xl/tight text-default md:text-3xl/tight dark:text-dark-default">
                 Currently seeking a blended leadership role where I can
-                collaborate on <strong className="text-bold">product</strong>{' '}
-                and <strong className="text-bold">design</strong>.
+                collaborate on{' '}
+                <strong className="text-bold dark:text-dark-bold">
+                  product
+                </strong>{' '}
+                and{' '}
+                <strong className="text-bold dark:text-dark-bold">
+                  design
+                </strong>
+                .
               </p>
               <Actions>
                 <Button
@@ -110,7 +119,11 @@ export default function Home() {
         </Container>
       </Section>
       <Section paddingY="8" paddingX={0}>
-        <AutoScroller gap="10" direction="right">
+        <AutoScroller
+          gap="10"
+          direction="right"
+          className="dark:contrast-50 dark:invert dark:saturate-0"
+        >
           <Image
             alt="ElasticPath"
             src={elasticpath}
@@ -161,7 +174,7 @@ export default function Home() {
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">About me</Heading>
-            <div className="prose">
+            <div className="prose dark:prose-invert">
               <p className="text-lg md:text-2xl">
                 In past roles, I’ve been a <strong>Product Manager</strong>,{' '}
                 <strong>Product Designer</strong>, and{' '}
@@ -345,7 +358,7 @@ export default function Home() {
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
             <Heading as="h2">Work history</Heading>
-            <div className="prose">
+            <div className="prose dark:prose-invert">
               <p className="text-base/7 md:text-xl/8">
                 I’ve worked with SaaS businesses on{' '}
                 <strong>Storefront &amp; Website Builders</strong> (Elastic Path
@@ -423,7 +436,7 @@ export default function Home() {
             >
               Mar 2023 &ndash; Oct 2024
             </Heading>
-            <div className="prose prose-sm md:prose-base">
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
               <Heading as="h4" styledAs="h3">
                 Director, Product at Elastic Path
               </Heading>
@@ -457,7 +470,7 @@ export default function Home() {
             >
               Apr 2021 &ndash; Mar 2023
             </Heading>
-            <div className="prose prose-sm md:prose-base">
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
               <Heading as="h4" styledAs="h3">
                 Director of Product &amp; Design at Unstack
               </Heading>
@@ -491,7 +504,7 @@ export default function Home() {
             >
               Feb 2020 &ndash; Apr 2021
             </Heading>
-            <div className="prose prose-sm md:prose-base">
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
               <Heading as="h4" styledAs="h3">
                 Principal Product Designer &amp; Co-founder at Launchable
               </Heading>
@@ -521,7 +534,7 @@ export default function Home() {
             >
               Nov 2018 &ndash; Feb 2020
             </Heading>
-            <div className="prose prose-sm md:prose-base">
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
               <Heading as="h4" styledAs="h3">
                 Director Product Design at Teamworks
               </Heading>
@@ -547,7 +560,7 @@ export default function Home() {
             >
               Oct 2016 &ndash; Oct 2018
             </Heading>
-            <div className="prose prose-sm md:prose-base">
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
               <Heading as="h4" styledAs="h3">
                 Design Manager at CloudBees
               </Heading>
@@ -577,7 +590,7 @@ export default function Home() {
             >
               Aug 2011 &ndash; Sep 2016
             </Heading>
-            <div className="prose prose-sm md:prose-base">
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
               <Heading as="h4" styledAs="h3">
                 UX Designer at UserVoice
               </Heading>
@@ -654,7 +667,7 @@ export default function Home() {
           </Columns>
         </Container>
       </Section>
-      <Section className="bg-depth-1">
+      <Section className="bg-depth-1 dark:bg-dark-depth-1">
         <Container>
           <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
             <Heading as="h2">

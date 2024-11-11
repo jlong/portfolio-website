@@ -105,7 +105,10 @@ export const ButtonScroller = ({
           className={clsx(
             'absolute left-0 top-1/2 z-10 -translate-y-1/2 transform',
             'flex items-center justify-center',
-            'rounded-full bg-depth-2 p-1 backdrop-blur-lg hover:bg-depth-3'
+            'text-default dark:text-dark-default',
+            'bg-depth-2 backdrop-blur-lg hover:bg-depth-3 dark:bg-dark-depth-2 dark:hover:bg-dark-depth-3',
+            'rounded-full',
+            'p-1'
           )}
           onClick={() => scrollByOffset(-(scroller.current?.clientWidth || 0))}
         >
@@ -131,7 +134,10 @@ export const ButtonScroller = ({
           className={clsx(
             'absolute right-0 top-1/2 z-10 -translate-y-1/2 transform',
             'flex items-center justify-center',
-            'rounded-full bg-depth-2 p-1 backdrop-blur-lg hover:bg-depth-3'
+            'text-default dark:text-dark-default',
+            'bg-depth-2 backdrop-blur-lg hover:bg-depth-3 dark:bg-dark-depth-2 dark:hover:bg-dark-depth-3',
+            'rounded-full',
+            'p-1'
           )}
           onClick={() => scrollByOffset(scroller.current?.clientWidth || 0)}
         >

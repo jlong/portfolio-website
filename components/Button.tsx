@@ -9,9 +9,9 @@ const styles = {
   base: 'relative justify-center rounded-lg font-semibold outline-border-focus outline-1 outline-offset-2',
   kind: {
     primary:
-      'text-button-primary-text bg-button-primary-background hover:text-button-primary-hover-text hover:bg-button-primary-hover-background',
+      'text-button-primary-text bg-button-primary-background hover:text-button-primary-hover-text hover:bg-button-primary-hover-background dark:text-dark-button-primary-text dark:bg-dark-button-primary-background dark:hover:text-dark-button-primary-hover-text dark:hover:bg-dark-button-primary-hover-background',
     secondary:
-      'text-button-secondary-text bg-button-secondary-background hover:text-button-secondary-hover-text hover:bg-button-secondary-hover-background',
+      'text-button-secondary-text bg-button-secondary-background hover:text-button-secondary-hover-text hover:bg-button-secondary-hover-background dark:text-dark-button-secondary-text dark:bg-dark-button-secondary-background dark:hover:text-dark-button-secondary-hover-text dark:hover:bg-dark-button-secondary-hover-background',
     disabled: 'text-loud bg-slate-200 opacity-50 cursor-not-allowed'
   },
   size: {

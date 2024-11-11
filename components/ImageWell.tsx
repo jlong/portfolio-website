@@ -24,10 +24,11 @@ export const ImageWell = ({
       className={clsx(
         'group',
         'relative',
-        'flex items-center justify-center',
-        'shrink-0',
+        'flex shrink-0 items-center justify-center',
         'h-[148px] w-[236px] md:h-[198px] md:w-[316px]',
-        'rounded-2xl border border-border bg-depth-1',
+        'bg-depth-1 dark:bg-dark-depth-1',
+        'border border-border dark:border-transparent',
+        'rounded-2xl',
         'overflow-clip',
         className
       )}

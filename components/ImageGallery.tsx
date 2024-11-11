@@ -118,7 +118,8 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             transition={{ type: 'tween', duration: 0.2 }}
             className={clsx(
               'fixed inset-0 z-50',
-              'bg-white/40 backdrop-blur-xl'
+              'bg-white/40 dark:bg-depth-2',
+              'backdrop-blur-xl'
             )}
           >
             <AnimatePresence

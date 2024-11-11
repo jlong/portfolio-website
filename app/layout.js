@@ -4,7 +4,7 @@ import { manrope, geist } from '@/lib/fonts'
 import clsx from 'clsx'
 
 export const metadata = {
-  metadataBase: new URL('https://hire.johnwlong.com'),
+  metadataBase: new URL('https://www.johnwlong.com'),
   title: 'Hire John W. Long',
   description:
     'A multi-discipline product leader with 20+ years experience building web apps & leading software teams. Currently seeking a leadership role where I can collaborate on  product and design.'

@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import { SunIcon } from '@/components/Icons/SunIcon'
 import { MoonWithStarBurstIcon } from '@/components/Icons/MoonWithStartburstIcon'
 import Icon from './Icon'
+import { ComputerIcon } from './Icons/ComputerIcon'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -121,7 +122,7 @@ export default function ThemeToggle() {
             onSelect={() => handleThemeChange('system')}
             checked={theme === 'system'}
           >
-            <Icon uid="monitor" size={20} />
+            <ComputerIcon size={20} />
             System
           </MenuItem>
         </DropdownMenu.Content>

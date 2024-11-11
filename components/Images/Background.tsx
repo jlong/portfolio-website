@@ -18,7 +18,7 @@ export const Background = () => {
 
   return (
     <div
-      className="absolute left-0 top-0 w-screen overflow-clip"
+      className="absolute left-0 top-0 hidden w-screen overflow-clip dark:block"
       style={{ height: size.height + 'px' }}
     >
       <motion.svg

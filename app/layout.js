@@ -18,7 +18,8 @@ export default function RootLayout({ children }) {
         manrope.variable,
         geist.variable,
         'bg-depth-0 dark:bg-dark-depth-0',
-        'scroll-smooth'
+        'scroll-smooth',
+        'dark'
       )}
     >
       <body>

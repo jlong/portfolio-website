@@ -128,7 +128,7 @@ const Chrome = ({
           <NavItem href="/#elsewhere">Elsewhere</NavItem>
         </Nav>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-1.5">
         <Button
           size="small"
           as={Link}

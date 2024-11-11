@@ -10,7 +10,11 @@ export const BigQuote = ({
 }) => {
   return (
     <blockquote
-      className={clsx('flex', 'flex-col', 'gap-4', 'prose', 'grow', className)}
+      className={clsx(
+        'flex grow flex-col gap-4',
+        'prose dark:prose-invert',
+        className
+      )}
     >
       {children}
     </blockquote>

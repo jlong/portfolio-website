@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import logo from '@/images/logo.svg'
 import NavLink from '@/components/NavLink'
 import { Button } from '@/components/Button'
+import ThemeToggle from './ThemeToggle'
 
 const Logo = ({ href, className }: { href: string; className?: string }) => (
   <Link href={href} className={className}>
@@ -30,7 +31,9 @@ const Header = ({
     className={clsx(
       'sticky top-0 z-50',
       'flex w-full items-center justify-between gap-2',
-      'border-b border-border bg-white/70 p-1.5 backdrop-blur-lg md:p-2',
+      'border-b border-border dark:border-dark-border',
+      'bg-white/70 dark:bg-transparent',
+      'p-1.5 backdrop-blur-lg md:p-2',
       className
     )}
   >
@@ -67,13 +70,17 @@ const NavItem = ({
     className={clsx(
       'relative',
       'flex items-center gap-0.25',
-      'duration-400 text-xl font-medium text-default transition-colors hover:text-bold',
+      'text-xl font-medium',
+      'dark:hover:dark-text-bold text-default hover:text-bold dark:text-dark-default',
+      'duration-400 transition-colors',
       className
     )}
     selectedClassName={clsx(
       'relative',
       'flex gap-1 items-center',
-      'transition-colors duration-400 text-normal font-semibold hover:text-bold',
+      'text-normal font-semibold',
+      'text-bold dark:text-bold',
+      'transition-colors duration-400',
       className
     )}
     underline
@@ -90,9 +97,16 @@ const Footer = ({ className }: { className?: string }) => (
       className
     )}
   >
-    <Container className="text-center text-sm md:text-base">
-      Made with ❤️ in North Carolina.{' '}
-      <span className="hidden md:inline">Copyright</span> &copy; John W. Long.
+    <Container
+      className={clsx(
+        'text-sm md:text-base',
+        'text-subtle dark:text-dark-subtle',
+        'text-center'
+      )}
+    >
+      Made with <strong className="text-bold dark:text-dark-bold">❤️</strong> in
+      North Carolina. <span className="hidden md:inline">Copyright</span> &copy;
+      John W. Long.
     </Container>
   </footer>
 )
@@ -114,13 +128,16 @@ const Chrome = ({
           <NavItem href="/#elsewhere">Elsewhere</NavItem>
         </Nav>
       </div>
-      <Button
-        size="small"
-        as={Link}
-        href="https://www.linkedin.com/in/wiseheart"
-      >
-        Get in touch
-      </Button>
+      <div className="flex gap-1.5">
+        <Button
+          size="small"
+          as={Link}
+          href="https://www.linkedin.com/in/wiseheart"
+        >
+          Get in touch
+        </Button>
+        <ThemeToggle />
+      </div>
     </Header>
     {children}
     <Footer />

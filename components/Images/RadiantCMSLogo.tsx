@@ -4,7 +4,7 @@ export const RadiantCMSLogo = () => (
     width="242"
     height="45"
     fill="none"
-    className="text-bold"
+    className="text-bold dark:text-dark-bold"
   >
     <title>Radiant CMS</title>
     <g clipPath="url(#a)">

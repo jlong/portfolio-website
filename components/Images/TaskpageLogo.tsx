@@ -4,7 +4,7 @@ export const TaskpageLogo = () => (
     width="186"
     height="50"
     fill="none"
-    className="text-bold"
+    className="text-bold dark:text-dark-bold"
     viewBox="0 0 186 50"
   >
     <title>Taskpage</title>

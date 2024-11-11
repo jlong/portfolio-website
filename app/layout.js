@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import { manrope, geist } from '@/lib/fonts'
+import clsx from 'clsx'
 
 export const metadata = {
   metadataBase: new URL('https://hire.johnwlong.com'),
@@ -13,11 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`
-        ${manrope.variable}
-        ${geist.variable}
-        scroll-smooth
-      `}
+      className={clsx(
+        manrope.variable,
+        geist.variable,
+        'bg-depth-0 dark:bg-dark-depth-0',
+        'scroll-smooth',
+        'dark'
+      )}
     >
       <body>
         <a href="#top"></a>

@@ -9,8 +9,6 @@ export const Box = ({
   children: ReactNode | ReactNode[]
 }) => {
   return (
-    <div className={clsx('flex', 'flex-col', 'gap-4', className)}>
-      {children}
-    </div>
+    <div className={clsx('flex flex-col gap-4', className)}>{children}</div>
   )
 }

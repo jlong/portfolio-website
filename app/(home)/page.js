@@ -37,6 +37,7 @@ import teamworks from '@/images/logos/teamworks.svg'
 import launchable from '@/images/logos/launchable.svg'
 import elasticpath from '@/images/logos/elasticpath.svg'
 import unstack from '@/images/logos/unstack.svg'
+import gierd from '@/images/logos/gierd.svg'
 
 /* Avatars */
 import thughes from '@/images/avatars/tim-hughes.jpg'
@@ -164,6 +165,13 @@ export default function Home() {
             src={uservoice}
             width={206}
             height={28}
+            className="-mx-4 scale-75 md:mx-0 md:scale-100"
+          />
+          <Image
+            alt="Gierd"
+            src={gierd}
+            width={130}
+            height={46}
             className="-mx-4 scale-75 md:mx-0 md:scale-100"
           />
         </AutoScroller>

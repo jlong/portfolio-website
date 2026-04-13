@@ -440,7 +440,9 @@ export default function Home() {
               <Heading as="h4" styledAs="h3">
                 Senior Principal Product Designer at Gierd
               </Heading>
-              <p>At Gierd, I collaborated product and engineering to build out the core application. I also worked closely with Marketing on the website and branding.</p>
+              <p>At Gierd, I was the sole designer supporting a 40+ person engineering team and 4 product managers. Gierd helps major brands like AT&amp;T, Verizon, and Acer list and manage products across Amazon, eBay, Target Plus, and other marketplaces.</p>
+              <p>I helped build the design system from scratch &mdash; first in Figma, then implemented with Rails helpers and Tailwind &mdash; giving the frontend team a consistent foundation to ship faster. I collaborated closely with product managers to design core parts of the platform including Catalog, a dynamic pricing engine with custom rules for competitive repricing, and a financial reporting suite that gave Finance a full P&amp;L with transaction-level traceability across all marketplaces.</p>
+              <p>Beyond product, I maintained the marketing website and brand assets, fielding everything from site updates to business cards.</p>
             </div>
 
             <Heading

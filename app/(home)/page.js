@@ -361,8 +361,8 @@ export default function Home() {
             <div className="prose dark:prose-invert">
               <p className="text-base/7 md:text-xl/8">
                 I’ve worked with SaaS businesses on{' '}
-                <strong>Storefront &amp; Website Builders</strong> (Elastic Path
-                Studio), <strong>User Feedback Tools</strong> (UserVoice),{' '}
+                <strong>eCommerce</strong> (Gierd &amp; Elastic Path),
+                <strong>User Feedback Tools</strong> (UserVoice),{' '}
                 <strong>Membership Management</strong> (MemberHub),{' '}
                 <strong>Sports Team Management</strong> (Teamworks),{' '}
                 <strong>Developer Tools</strong> (CloudBees Jenkins), and{' '}
@@ -429,6 +429,20 @@ export default function Home() {
         </div>
         <Container>
           <Columns layout={{ md: '1-3' }} gap="5">
+            <Heading
+              as="h3"
+              styledAs="h4"
+              className="-mb-3 opacity-50 md:mb-0 md:opacity-100"
+            >
+              Feb 2025 &ndash; Apr 2026
+            </Heading>
+            <div className="prose prose-sm md:prose-base dark:prose-invert">
+              <Heading as="h4" styledAs="h3">
+                Senior Principal Product Designer at Gierd
+              </Heading>
+              <p>At Gierd, I collaborated product and engineering to build out the core application. I also worked closely with Marketing on the website and branding.</p>
+            </div>
+
             <Heading
               as="h3"
               styledAs="h4"

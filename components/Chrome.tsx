@@ -71,7 +71,7 @@ const NavItem = ({
       'relative',
       'flex items-center gap-0.25',
       'text-xl font-medium',
-      'dark:hover:dark-text-bold text-default hover:text-bold dark:text-dark-default',
+      'dark:hover:text-dark-bold text-default hover:text-bold dark:text-dark-default',
       'duration-400 transition-colors',
       className
     )}
@@ -79,7 +79,7 @@ const NavItem = ({
       'relative',
       'flex gap-1 items-center',
       'text-normal font-semibold',
-      'text-bold dark:text-bold',
+      'text-bold dark:text-dark-bold',
       'transition-colors duration-400',
       className
     )}

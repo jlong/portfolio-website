@@ -72,6 +72,12 @@ import teamworksTutoring from '@/images/gallery/teamworks-tutoring.png'
 import teamworksBookingSlots from '@/images/gallery/teamworks-booking-slots.png'
 import teamworksAddAppointment from '@/images/gallery/teamworks-add-appointment.png'
 import teamworksActivityFeed from '@/images/gallery/teamworks-activity-feed.png'
+import gierdSalesOverview from '@/images/gallery/gierd-sales-overview.png'
+import gierdPriceList from '@/images/gallery/gierd-price-list.png'
+import gierdTransactionsExpanded from '@/images/gallery/gierd-transactions-expanded.png'
+import gierdImportMapColumns from '@/images/gallery/gierd-import-map-columns.png'
+import gierdDemoDataBanner from '@/images/gallery/gierd-demo-data-banner.png'
+import gierdSignUp from '@/images/gallery/gierd-sign-up.png'
 
 export default function Home() {
   return (
@@ -382,6 +388,12 @@ export default function Home() {
         <div className="-mx-2 -mt-2 flex gap-4 overflow-x-auto px-2 md:pl-[calc(50vw-565px+(1130px/4)+32px)]">
           <ImageGallery
             images={[
+              { src: gierdSalesOverview, alt: 'Gierd Sales Overview' },
+              { src: gierdPriceList, alt: 'Gierd Price List' },
+              { src: gierdTransactionsExpanded, alt: 'Gierd Transactions' },
+              { src: gierdImportMapColumns, alt: 'Gierd Import Map Columns' },
+              { src: gierdDemoDataBanner, alt: 'Gierd Demo Data Banner' },
+              { src: gierdSignUp, alt: 'Gierd Sign Up' },
               { src: elasticPathProductGrid, alt: 'Elastic Path Product Grid' },
               {
                 src: elasticPathMasterDetailView,

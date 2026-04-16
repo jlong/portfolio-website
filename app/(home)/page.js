@@ -87,22 +87,18 @@ export default function Home() {
         <Container>
           <Columns layout={{ md: '3-1' }} gap="5">
             <Box>
-              <Heading as="h1">
+              <Heading as="h1" className="text-balance">
                 <Eyebrow>John W. Long</Eyebrow> A multi-discipline product
-                leader with 20+ years experience building web apps &amp; leading
-                software teams.
+                designer with 20+ years experience crafting interfaces, design
+                systems, and digital products.
               </Heading>
-              <p className="text-xl/tight text-default md:text-3xl/tight dark:text-dark-default">
-                Currently seeking a blended leadership role where I can
-                collaborate on{' '}
+              <p className="text-xl/tight text-balance text-default md:text-3xl/tight dark:text-dark-default">
+                Currently seeking an {' '}
                 <strong className="text-bold dark:text-dark-bold">
-                  product
+                  Product Design
                 </strong>{' '}
-                and{' '}
-                <strong className="text-bold dark:text-dark-bold">
-                  design
-                </strong>
-                .
+                role where I can bring craft, systems thinking, and deep product
+                intuition to a great team.
               </p>
               <Actions>
                 <Button
@@ -195,28 +191,22 @@ export default function Home() {
                 <strong>Frontend Engineer</strong>.
               </p>
               <p className="text-base/7 md:text-xl/8">
-                My approach to product is grounded in action, prioritizing
-                business objectives based on real customer insights. I believe
-                in quickly testing ideas in production and iterating based on
-                feedback and user behavior. For the modern software team{' '}
+                My approach to design is rooted in understanding real user
+                problems before reaching for solutions. I believe the best
+                interfaces feel inevitable — clear, purposeful, and crafted with
+                care.{' '}
                 <strong className="font-bold">
-                  product-led growth must be the focus
-                </strong>
-                —solving real business problems in a way that creates passionate
-                users.
+                  Design systems thinking
+                </strong>{' '}
+                is central to how I work: building components and patterns that
+                scale without sacrificing the details that make products feel
+                polished.
               </p>
               <p className="text-base/7 md:text-xl/8">
-                Collaboration, coaching, and managing by influence are the
-                primary tools I use to lead teams. In the spirit of{' '}
-                <Link href="https://agilemanifesto.org/principles.html">
-                  old-school Agile
-                </Link>
-                , I believe in people over process. If a methodology is
-                necessary, I’ve found the most success with{' '}
-                <Link href="https://www.atlassian.com/agile/kanban">
-                  Kanban
-                </Link>{' '}
-                or <Link href="https://basecamp.com/shapeup">Shape Up</Link>.
+                Having written production code throughout my career, I thrive
+                working in close partnership with engineers — I speak the
+                language of implementation and prefer tight, cross-functional
+                loops over waterfall handoffs.
               </p>
             </div>
           </Columns>

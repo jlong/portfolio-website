@@ -23,7 +23,7 @@ import { ImageGallery } from '@/components/ImageGallery'
 import { ButtonScroller } from '@/components/ButtonScroller'
 import { ZestIconsLogo } from '@/components/Images/ZestIconsLogo'
 import { RadiantCMSLogo } from '@/components/Images/RadiantCMSLogo'
-import { TaskpageLogo } from '@/components/Images/TaskpageLogo'
+import { ContextStoreLogo } from '@/components/Images/ContextStoreLogo'
 import IconButton from '@/components/IconButton'
 import { ImageWell } from '@/components/ImageWell'
 
@@ -641,18 +641,14 @@ export default function Home() {
             <div className="w-full overflow-hidden">
               <Heading as="h3">Personal projects</Heading>
               <ButtonScroller className="mb-4 mt-2">
+                <ImageWell href="https://contextstore.app" zoom>
+                  <ContextStoreLogo />
+                </ImageWell>
                 <ImageWell href="https://github.com/radiant/radiant" zoom>
                   <RadiantCMSLogo />
                 </ImageWell>
                 <ImageWell href="https://zesticons.com" zoom>
                   <ZestIconsLogo />
-                </ImageWell>
-                <ImageWell
-                  ribbon="Coming soon!"
-                  className="cursor-not-allowed"
-                  zoom
-                >
-                  <TaskpageLogo />
                 </ImageWell>
               </ButtonScroller>
 
